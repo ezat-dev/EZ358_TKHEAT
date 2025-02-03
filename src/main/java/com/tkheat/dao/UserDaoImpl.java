@@ -35,4 +35,9 @@ public class UserDaoImpl implements UserDao{
 		sqlSession.insert("users.userMenuClick", users);
 	}
 
+	@Override
+	public Users getLoginUser(Users users) {
+		return sqlSession.selectOne("users.getLoginUser", users);
+	}
+
 }

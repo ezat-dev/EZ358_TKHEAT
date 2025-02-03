@@ -7,19 +7,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">	
-<title>태경 웹페이지</title>
+<title>(주)태경열처리</title>
 
 <!-- 사이드바 템플릿 사용--> 
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<script type="text/javascript" src="/tkheat/js/jquery.min.js"></script>
+<script type="text/javascript" src="/tkheat/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/tkheat/css/bootstrap.min.css" />
 
 <!-- 제이쿼리홈페이지 js -->
-<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/tkheat/js/jquery.js"></script>
 
 <!-- 모달 -->
-<script type="text/javascript" src="/js/jquery.modal.js"></script>
-<link rel="stylesheet" href="/css/jquery.modal.css" />
+<script type="text/javascript" src="/tkheat/js/jquery.modal.js"></script>
+<link rel="stylesheet" href="/tkheat/css/jquery.modal.css" />
 
 <jsp:include page="include/pluginpage.jsp"/>
 
@@ -71,58 +71,6 @@
 		<span id="alert2Span2" style="display:block;"></span>
 	</div>
 
-	<div id="pwChangeModal" class="dia" style="display:none;">
-        <form id="pwChangeForm" autocomplete="off" method="post" 
-        		class="form-inline">
-        	
-        	<div class="form-row">
-				<div class="form-group">
-					<label for="n_id" class="col-form-label text-center"
-						style="background-color:cornsilk; width:162px;">아이디</label>
-					<input type="text" class="form-control ml-2 pt-0 pb-0 pr-0" 
-						id="n_id" name="n_id"
-						style="width:254px; height:30px; background-color:#EAEAEA;"
-						readonly="readonly"/>
-				</div>
-			</div>
-			
-			<div class="form-row">
-				<hr class="hr_line" />
-			</div>
-			
-			
-			<div class="form-row">	
-				<div class="form-group mt-1">
-					<label for="n_pw" class="col-form-label text-center"
-						style="background-color:cornsilk; width:162px;">현재 비밀번호</label>
-					<input type="password" class="form-control ml-2 pt-0 pb-0 pr-0" 
-						id="n_pw" name="n_pw" autocomplete="off"
-						style="width:254px; height:30px;"/>
-				</div>
-			</div>
-			
-			<div class="form-row">
-				<hr class="hr_line" />
-			</div>
-			
-			
-			<div class="form-row">	
-				<div class="form-group mt-1">
-					<label for="c_pw" class="col-form-label text-center"
-						style="background-color:cornsilk; width:162px;">변경 비밀번호</label>
-					<input type="password" class="form-control ml-2 pt-0 pb-0 pr-0" 
-						id="c_pw" name="c_pw" autocomplete="off"
-						style="width:254px; height:30px;"/>
-				</div>
-			</div>
-			
-			<div class="form-row">
-				<hr class="hr_line" />
-			</div>
-        </form>
-	
-	</div>
-	
 	<div class="container-fluid">
 		<div class="d-flex align-items-center" style="height:70vh;">
 			<div class="col-md-4"></div>
@@ -133,17 +81,17 @@
 						<hr class="colorgraph">
 							
 						<div class="form-group">
-							<label for="u_id" class="control-label col-xs-3">아이디</label>
+							<label for="user_id" class="control-label col-xs-3">아이디</label>
 							<div class="col-xs-9">
-								<input type="text" name="u_id" id="u_id" class="form-control input-lg">
+								<input type="text" name="user_id" id="user_id" class="form-control input-lg">
 							</div>		                    
 						</div>
 							
 							
 						<div class="form-group">
-							<label for="u_pw" class="control-label col-xs-3">비밀번호</label>
+							<label for="user_pw" class="control-label col-xs-3">비밀번호</label>
 							<div class="col-xs-9">
-								<input type="password" name="u_pw" id="u_pw" class="form-control input-lg"
+								<input type="password" name="user_pw" id="user_pw" class="form-control input-lg"
 								 autocomplete="off" onkeypress="cpas_lock(event);">
 							</div>
 						<p id="capslock" style="position:relative; border:2px solid #003b83; width:300px; bottom:0px; display:none"> 
@@ -175,13 +123,13 @@
 
 
 //이벤트
-	$("#u_id").keydown(function(e){
+	$("#user_id").keydown(function(e){
 		if(e.keyCode == 13){
 			login();
 		}
 	});
 
-	$("#u_pw").keydown(function(e){
+	$("#user_pw").keydown(function(e){
 		if(e.keyCode == 13){
 			login();
 		}
@@ -214,14 +162,14 @@
 
 	//로그인
 	function login(){
-		var id = $("#u_id").val();
-		var pw = $("#u_pw").val();
+		var id = $("#user_id").val();
+		var pw = $("#user_pw").val();
 		//console.log("클릭 : " + id + " / " + pw);
 
 		$.ajax({
-			url:"/gumgu/login",
+			url:"/tkheat/user/login",
 			type:"post",
-			data:{id:id, pw:pw},
+			data:{"user_id":id, "user_pw":pw},
 			success:function(result){
 				if(result == "fail"){
 //					modal_alert();
@@ -233,7 +181,8 @@
 					return;
 					
 				}else{
-
+					location.href=result;
+/*
 					if(!check.test(pw)) { 
 						// 처리할 문장						
 						$("#alert3-form").dialog("option","title","비밀번호 정책변경");
@@ -243,8 +192,9 @@
 
 						return;
 					}else{
-						location.href=result;
+						
 					}
+*/
 				}
 			}
 		});

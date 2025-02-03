@@ -14,4 +14,6 @@ public interface UserDao {
 
 	void userMenuClick(Users users);
 
+	Users getLoginUser(Users users);
+
 }

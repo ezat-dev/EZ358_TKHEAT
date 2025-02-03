@@ -33,13 +33,13 @@
 		        	<div class="d-flex justify-content-end">
 						<c:if test="${sessionScope.user != null}">
 							<div class="p-1 ml-auto">
-						  		<label class="control-label text-white" style="padding:0;"><strong>${sessionScope.user.name}님</strong>
+						  		<label class="control-label text-white" style="padding:0;"><strong>${sessionScope.user.user_name}님</strong>
 						  		환영합니다.</label>
 							</div>
 							<div class="p-1">
 						  		<div style="padding:0;">
 							  		<button type="button" class="btn btn-secondary btn-sm"
-							  		onclick="location.href='/gumgu/logout'">로그아웃</button>		  		
+							  		onclick="location.href='/tkheat/user/logout'">로그아웃</button>		  		
 						  		</div>
 							</div>
 		

@@ -43,32 +43,6 @@
 	 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 	       <property name="dataSource" ref="dataSource"/>
 	   </bean>
-	
-	<!-- 파이어버드 -->
-	 <bean id="sqlSessionFactory_fire" class="org.mybatis.spring.SqlSessionFactoryBean">
-	        <property name="dataSource" ref="dataSource_fire" />
-	        <property name="configLocation" value="classpath:mybatis/config/mybatis-context_fire.xml"></property>
-	 </bean>
-	 <bean id="session_fire" class="org.mybatis.spring.SqlSessionTemplate">
-	        <constructor-arg ref="sqlSessionFactory_fire" />
-	 </bean>
-		 
-	 <bean id="transactionManager_fire" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-	       <property name="dataSource" ref="dataSource"/>
-	  </bean>
-
-	<!-- 포스트그레 백업 -->
-	 <bean id="sqlSessionFactory_back" class="org.mybatis.spring.SqlSessionFactoryBean">
-	        <property name="dataSource" ref="dataSource_back" />
-	        <property name="configLocation" value="classpath:mybatis/config/mybatis-context.xml"></property>
-	 </bean>
-	 <bean id="session_back" class="org.mybatis.spring.SqlSessionTemplate">
-	        <constructor-arg ref="sqlSessionFactory_back" />
-	 </bean>
-		 
-	 <bean id="transactionManager_back" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-	       <property name="dataSource" ref="dataSource"/>
-	   </bean>
 
 	<context:component-scan base-package="com.tkheat.dao com.tkheat.service"/>
 </beans>

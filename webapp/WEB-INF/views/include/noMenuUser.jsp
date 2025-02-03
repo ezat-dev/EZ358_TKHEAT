@@ -8,22 +8,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>금구</title>
+<title>(주)태경열처리</title>
 <!-- 사이드바 템플릿 사용--> 
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<script type="text/javascript" src="/tkheat/js/jquery.min.js"></script>
+<script type="text/javascript" src="/tkheat/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/tkheat/css/bootstrap.min.css" />
 
 <!-- 제이쿼리홈페이지 js -->
-<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/tkheat/js/jquery.js"></script>
 
 <!-- 모달 -->
-<script type="text/javascript" src="/js/jquery.modal.js"></script>
-<link rel="stylesheet" href="/css/jquery.modal.css">
+<script type="text/javascript" src="/tkheat/js/jquery.modal.js"></script>
+<link rel="stylesheet" href="/tkheat/css/jquery.modal.css">
 
 <!-- dataTable -->
-<script type="text/javascript" src="/js/datatables.min.js"></script>
-<link rel="stylesheet" href="/css/datatables.min.css">
+<script type="text/javascript" src="/tkheat/js/datatables.min.js"></script>
+<link rel="stylesheet" href="/tkheat/css/datatables.min.css">
 
 
 <style>

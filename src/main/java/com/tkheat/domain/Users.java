@@ -15,6 +15,10 @@ public class Users {
 	private String menu_regdate;
 	private String menu_yn;
 	
+	//메뉴 탭 정보
+	private int tab_idx;
+	private String tab_id;
+	
 	public String getUser_id() {
 		return user_id;
 	}
@@ -70,6 +74,19 @@ public class Users {
 	}
 	public void setMenu_yn(String menu_yn) {
 		this.menu_yn = menu_yn;
+	}
+	
+	public int getTab_idx() {
+		return tab_idx;
+	}
+	public void setTab_idx(int tab_idx) {
+		this.tab_idx = tab_idx;
+	}
+	public String getTab_id() {
+		return tab_id;
+	}
+	public void setTab_id(String tab_id) {
+		this.tab_id = tab_id;
 	}
 	
 }

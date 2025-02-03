@@ -139,8 +139,13 @@ public class MainController {
     }	
     
     @RequestMapping(value= "/", method = RequestMethod.GET)
-    public String ccf01_02(Model model) {
-        return "/ccf/ccf01_02.jsp"; // 
+    public String main(Model model) {
+        return "/index.jsp"; // 
+    }
+    
+    @RequestMapping(value= "/home/test", method = RequestMethod.GET)
+    public String home(Model model) {
+    	return "/home.jsp"; // 
     }
     
     //메인, 백업서버 핑테스트 메서드

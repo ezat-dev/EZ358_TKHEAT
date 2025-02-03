@@ -10,24 +10,24 @@
 	href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900">
 	
 <!-- 사이드바 기본css -->
-<link rel="stylesheet" href="/css/sidebar-css.css" />
-<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/tkheat/css/sidebar-css.css" />
+<link rel="stylesheet" href="/tkheat/css/font-awesome.min.css" />
 
 <!-- 사이드바 템플릿 사용-->
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<script type="text/javascript" src="/tkheat/js/jquery.min.js"></script>
+<script type="text/javascript" src="/tkheat/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/tkheat/css/bootstrap.min.css" />
 
 <!-- 제이쿼리홈페이지 js -->
-<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/tkheat/js/jquery.js"></script>
 
 <!-- 모달 -->
-<script type="text/javascript" src="/js/jquery.modal.js"></script>
-<link rel="stylesheet" href="/css/jquery.modal.css">
+<script type="text/javascript" src="/tkheat/js/jquery.modal.js"></script>
+<link rel="stylesheet" href="/tkheat/css/jquery.modal.css">
 
 <!-- dataTable -->
-<script type="text/javascript" src="/js/datatables.min.js"></script>
-<link rel="stylesheet" href="/css/datatables.min.css">
+<script type="text/javascript" src="/tkheat/js/datatables.min.js"></script>
+<link rel="stylesheet" href="/tkheat/css/datatables.min.css">
 
 
 
@@ -89,34 +89,34 @@ embed:focus {
 			<div class="p-4">
 				<ul class="list-unstyled components mb-2">
 					
-					<c:if test="${sessionScope.user.position == '관리자'}">
+					<c:if test="${sessionScope.user.user_level == '관리자'}">
 						<li class="active">
 						<a href="#Submenu1"
 							data-toggle="collapse" aria-expanded="false"
 							class="dropdown-toggle menuHeader">기준정보관리</a>
 							<ul class="collapse list-unstyled" id="Submenu1">
 								<li>
-									<a href="javascript:void(0);" onclick="menuClick('사용자 관리','/info/userManage');"
+									<a href="javascript:void(0);" onclick="menuClick('사용자 관리','/home/test');"
 										class="menuBody">사용자 관리
 									</a>
 								</li>
 								<li>
-									<a href="javascript:void(0);" onclick="menuClick('거래처 관리','/info/clientManage');"
+									<a href="javascript:void(0);" onclick="menuClick('거래처 관리','/home/test');"
 										class="menuBody">거래처 관리
 									</a>
 								</li>
 								<li>
-									<a href="javascript:void(0);" onclick="menuClick('제품 마스터','/info/productMaster');"
+									<a href="javascript:void(0);" onclick="menuClick('제품 마스터','/home/test');"
 										class="menuBody">제품 마스터
 									</a>
 								</li>
 								<li>
-									<a href="javascript:void(0);" onclick="menuClick('설비 마스터','/info/machineMaster');"
+									<a href="javascript:void(0);" onclick="menuClick('설비 마스터','/home/test');"
 									class="menuBody">설비 마스터
 									</a>
 								</li>
 								<li>
-									<a href="javascript:void(0);" onclick="menuClick('공정 마스터','/info/processMaster');"
+									<a href="javascript:void(0);" onclick="menuClick('공정 마스터','/home/test');"
 									class="menuBody">공정 마스터
 									</a>
 								</li>
@@ -143,7 +143,7 @@ embed:focus {
 								class="menuBody">출고관리
 								</a>
 							</li>
-							<c:if test="${sessionScope.user.position == '관리자'}">
+							<c:if test="${sessionScope.user.user_level == '관리자'}">
 								<li>
 									<a href="javascript:void(0);" onclick="menuClick('출고완료현황','/inout/jaegoStatus');"
 									class="menuBody">출고완료현황
@@ -168,7 +168,7 @@ embed:focus {
 							aria-expanded="false" 
 							class="dropdown-toggle menuHeader">공정관리</a>
 						<ul class="collapse list-unstyled" id="Submenu3">
-							<c:if test="${sessionScope.user.position == '관리자'}">
+							<c:if test="${sessionScope.user.user_level == '관리자'}">
 								<li>
 									<a href="javascript:void(0);" onclick="menuClick('공정작업현황(LOT추적)','/process/processWorkStatus');"
 									class="menuBody">공정작업현황(LOT추적)
@@ -242,19 +242,19 @@ embed:focus {
 								<a href="javascript:void(0);" onclick="menuClick('온도모니터링','/work/googleChartTest');"
 								class="menuBody">온도모니터링</a>
 							</li>
-							<c:if test="${sessionScope.user.id == 'hjko'}">
+							<c:if test="${sessionScope.user.user_id == 'hjko'}">
 								<li>
 									<a href="javascript:void(0);" onclick="menuClick('구글차트','/work/googleChartTest');"
 									class="menuBody">구글차트</a>
 								</li>
 							</c:if>
-							<c:if test="${sessionScope.user.id == 'hjko'}">
+							<c:if test="${sessionScope.user.user_id == 'hjko'}">
 								<li>
 									<a href="javascript:void(0);" onclick="menuClick('구글차트테스트','/work/googleChart_jsp');"
 									class="menuBody">구글차트테스트</a>
 								</li>
 							</c:if>
-							<c:if test="${sessionScope.user.id == 'hjko'}">
+							<c:if test="${sessionScope.user.user_id == 'hjko'}">
 								<li>
 									<a href="javascript:void(0);" onclick="menuClick('하이차트','/work/highChartTest');"
 									class="menuBody">하이차트</a>
@@ -262,7 +262,7 @@ embed:focus {
 							</c:if>
 							
 							
-							<c:if test="${sessionScope.user.position == '관리자'}">
+							<c:if test="${sessionScope.user.user_level == '관리자'}">
 								<li>
 									<a href="javascript:void(0);" onclick="menuClick('작업일보','/work/workReportManage');"
 									class="menuBody">작업일보</a>
@@ -270,7 +270,7 @@ embed:focus {
 							</c:if>
 						</ul>
 					</li>
-					<c:if test="${sessionScope.user.position == '관리자'}">
+					<c:if test="${sessionScope.user.user_level == '관리자'}">
 						<li><a href="#Submenu4" 
 								data-toggle="collapse"
 								aria-expanded="false" 
@@ -456,13 +456,13 @@ $("#sidebarCollapse").on("click",function(){
 		
 		//href="/info/userManage"
 		$.ajax({
-			url:"/gumgu/menuClick",
+			url:"/tkheat/user/userMenuClick",
 			type:"post",
 			data:{menu:menu, link:link},
 			success:function(result){
 				if(result == "Y"){
 //					location.href=link;
-					location.href="/gumgu/usersMenu";
+					location.href="/tkheat/user/usersMenuOkSelect";
 					
 				}else{
 					alert("로그인 안된상태");
@@ -493,21 +493,21 @@ $("#sidebarCollapse").on("click",function(){
 				<ul class="nav nav-tabs">
 					<c:forEach var="tab" items="${tabList}">
 						<c:choose>
-							<c:when test="${tab.t_idx eq 0 }">
+							<c:when test="${tab.tab_idx eq 0 }">
 								<li class="nav-item">
 									<a class="nav-link active" data-toggle="tab"
-										href="#${tab.t_id}">${tab.m_name}
+										href="#${tab.tab_id}">${tab.menu_name}
 										&nbsp;<i class="fa fa-times menuCloseBtn" aria-hidden="true"										
-										onclick="menuDelete('${tab.m_name}')"></i>
+										onclick="menuDelete('${tab.menu_name}')"></i>
 									</a>
 								</li>
 							</c:when>
 							<c:otherwise>
 								<li class="nav-item">
 									<a class="nav-link" data-toggle="tab"
-										href="#${tab.t_id}">${tab.m_name}
+										href="#${tab.tab_id}">${tab.menu_name}
 										&nbsp;<i class="fa fa-times menuCloseBtn" aria-hidden="true"
-										onclick="menuDelete('${tab.m_name}')"></i>
+										onclick="menuDelete('${tab.menu_name}')"></i>
 									</a>
 								</li>
 							
@@ -528,73 +528,24 @@ $("#sidebarCollapse").on("click",function(){
 			<div id="myTabContent" class="tab-content container-fluid">
 				<c:forEach var="tab" items="${tabList}">
 					<c:choose>
-						<c:when test="${tab.t_idx eq 0 }">
-							<div class="tab-pane fade active show row" id="${tab.t_id}">
-	<!-- 							
-								<div style="min-height: 87.7vh; min-width:100vh;
-									padding-left:0; padding-right:0;" src="${tab.m_link }"></div>
-									
-									
- -->									
-								<iframe src="${tab.m_link }" frameborder="0" scrolling="no" 
+						<c:when test="${tab.tab_idx eq 0 }">
+							<div class="tab-pane fade active show row" id="${tab.tab_id}">
+
+								<iframe src="${tab.menu_url }" frameborder="0" scrolling="no" 
 									class="col-md-12"
 									style="min-height: 87.7vh; min-width:100vh;
 									padding-left:0; padding-right:0;"></iframe>
 	
- 
-<!-- style="min-height: 87.7vh; min-width:100vh; -->
-<!-- 
- 								<embed src="${tab.m_link }" type="text/html" 
-									class="col-md-12"									
-									style="min-width:1200; min-height:840;
-									padding-left:0; padding-right:0;"/>
- -->
- 
-<!--   
- 								<embed src="${tab.m_link }" type="text/html"
- 									width="100vh" height="87.7vh"/>
- -->									
-									
-									
- 
-<!--  								
- 								<object data="${tab.m_link }" type="text/html"
-									class="col-md-12"
-									style="min-height: 87.7vh; min-width:100vh;
-									padding-left:0; padding-right:0; overflow: none;"></object>
- -->
- 
-<!--  
- 								<object data="${tab.m_link }" type="text/html" 									
- 									width="100%" height="87.7%"
- 									style="overflow:hidden;"></object>
- -->
- 								
 							</div>							
 						</c:when>
 						
 						<c:otherwise>
-							<div class="tab-pane fade row" id="${tab.t_id}">
+							<div class="tab-pane fade row" id="${tab.tab_id}">
  						
-								<iframe src="${tab.m_link }" frameborder="0" scrolling="no" 
+								<iframe src="${tab.menu_url }" frameborder="0" scrolling="no" 
 									class="col-md-12"
 									style="min-height: 87.7vh; min-width:100vh;
-									padding-left:0; padding-right:0;"></iframe>
- 								
-<!-- style="min-height: 87.7vh; min-width:100vh; -->
-<!-- 
- 								<embed src="${tab.m_link }" type="text/html"
- 									width="100vh" height="87.7vh"/>
- --> 									
- 									
- 									
- 									
-<!--  
- 								<object data="${tab.m_link }" type="text/html"
- 									width="100%" height="87.7%"
- 									style="overflow:hidden;"></object>
- --> 								
-									
+									padding-left:0; padding-right:0;"></iframe>	
 							</div>							
 						</c:otherwise>
 					</c:choose>
@@ -620,26 +571,21 @@ function tabMove(link, t_id){
 } 
 
 function menuDelete(t_name){
-//	console.log("t_id : "+t_id);
+
 	$.ajax({
-		url:"/gumgu/menuDelete",
+		url:"/tkheat/user/userMenuDelete",
 		type:"post",
 		data:{name:t_name},
 		success:function(result){
 			if(result == "Y"){
-				location.href="/gumgu/usersMenu";
+				location.href="/tkheat/user/usersMenuOkSelect";
 			}else{
 				alert("로그인 안된상태");
 			}
 			
 		}
 	});
-
-	
 }
- 
 </script>
-	
-	
 </body>
 </html>
