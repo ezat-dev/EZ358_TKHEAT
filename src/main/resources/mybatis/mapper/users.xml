@@ -3,87 +3,35 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="users">
-	<select id="getLoginUser" parameterType="users" resultType="users">
-		SELECT *
-		FROM tb_user
-		WHERE id = #{id} AND pw = #{pw} AND yn = 'Y'
-	</select>
-	
-	<select id="getUser" parameterType="string" resultType="int" >
-		SELECT COUNT(*) AS ccnt
-		FROM tb_user
-		WHERE id = #{value} AND yn = 'Y'
-	
-	</select>
-	
-	<select id="getDeleteUser" parameterType="string" resultType="int" >
-		SELECT COUNT(*) AS ccnt
-		FROM tb_user
-		WHERE id = #{value} AND yn = 'N'
-	
-	</select>
-	
-	
-	
-	
-	<insert id="userSave" parameterType="users" statementType="CALLABLE">
-		{call sp_user_set(#{id},#{pw},#{name},#{position})}
-	</insert>
 
-
-	<insert id="userRegister" parameterType="users" statementType="CALLABLE">
-		{CALL sp_user_set(#{id},#{pw},#{name},#{position},#{query_gb})}
-	</insert>
-
-	<insert id="userModify" parameterType="users" statementType="CALLABLE">
-		{CALL sp_user_set(#{id},#{pw},#{name},#{position},#{query_gb})}
-	</insert>
+ 	<select id="userMenuClick" parameterType="users">
+ 		CALL sp_usermenu_set(#{id},#{m_name},#{m_link})
+ 	</select>
  
-	<insert id="userActivation" parameterType="users" statementType="CALLABLE">
-		{CALL sp_user_set(#{id},#{pw},#{name},#{position},#{query_gb})}
-	</insert>
- 
- 
-	<select id="getUserListDetail" resultType="users" parameterType="users">
-		SELECT *, repeat('*',LENGTH(pw)) AS view_pw
-		FROM tb_user
-		WHERE yn = 'Y'
-			<if test="name != '' and name != null">
-				AND name = #{name}
-			</if>
-		ORDER BY id
+	<select id="usersMenuOkSelect" resultType="users" parameterType="users">
+		SELECT m_name, MAX(regdate) AS regdate
+		FROM (
+			SELECT CONCAT(m_name,'_',m_link) AS m_name, regdate
+			FROM tb_usermenu
+			WHERE yn = 'Y'
+			AND id= #{value}
+		) AS aaa
+		GROUP BY m_name
+		ORDER BY regdate DESC
 	</select>
 	
-	<select id="getUserListDetailCount" resultType = "int" parameterType="users">
-		SELECT COUNT(*) AS count
-		FROM tb_user
-		WHERE yn = 'Y'
+	<select id="userMenuSelectCount" resultType="users" parameterType="users">
+		SELECT m_link
+		FROM tb_usermenu
+		WHERE id = #{value} AND yn='Y'
+		ORDER BY regdate DESC
+		LIMIT 1
 	</select>
 	
-	<select id="getUserSelectOne" resultType="users" parameterType="string">
-		SELECT *
-		FROM tb_user
-		WHERE id = #{value}
-	</select>
-	
-	<select id="userDelete" parameterType="string">
-		SELECT sp_user_delete_set(#{value}) 
-	</select>
-	
-	<select id="getUserListSelectTag" resultType="string">
-		SELECT DISTINCT name
-		FROM tb_user
-		WHERE yn='Y'
-	</select>
-		
-	<select id="getUserPwChangeChk" parameterType="map" resultType="int">
-		SELECT COUNT(*)
-		FROM tb_user
-		WHERE yn = 'Y' AND id = #{n_id} AND pw = #{n_pw}
-	</select>
-	
-	<update id="userPwChange" parameterType="map">
-		UPDATE tb_user SET pw = #{c_pw}
-		WHERE yn = 'Y' AND id = #{n_id} AND pw = #{n_pw} 
+	<update id="userMenuDelete" parameterType="users">
+		UPDATE tb_usermenu SET yn='N'
+		WHERE m_name = #{m_name} AND id = #{id}
 	</update>
+
+
 </mapper>
