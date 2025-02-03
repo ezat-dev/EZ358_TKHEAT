@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">	
-<title>금구 웹페이지</title>
+<title>태경 웹페이지</title>
 
 <!-- 사이드바 템플릿 사용--> 
 <script type="text/javascript" src="/js/jquery.min.js"></script>
