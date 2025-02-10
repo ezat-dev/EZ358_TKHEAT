@@ -1,0 +1,31 @@
+package com.tkheat.dao;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.tkheat.domain.Users;
+@Repository
+public class ManagementDaoImpl implements ManagementDao {
+	 @Autowired
+	    private SqlSession sqlSession;
+
+	  @Override
+	    public List<Users> getUserList() {
+	        return sqlSession.selectList("users.getUserList");
+	    }
+	  @Override
+	   public List<Users> getBigPageList() {
+	        return sqlSession.selectList("users.getBigPageList");
+	    }
+	  @Override
+	    public List<Users> getSmallPageList(String page_big) {  
+	        return sqlSession.selectList("users.getSmallPageList", page_big);  
+	    }
+
+}
+

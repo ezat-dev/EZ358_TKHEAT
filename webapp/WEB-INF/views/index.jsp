@@ -57,7 +57,7 @@
 	</div>
 
 	<header>
-		<jsp:include page="include/header.jsp"/>
+
 	</header>
 	
 	<!-- alert다이얼로그 한줄 -->
