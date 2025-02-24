@@ -4,10 +4,13 @@ public class Users {
 
 	//tb_user테이블
 	private String user_code;
+	private String user_eNum;
 	private String user_id;
 	private String user_pw;
 	private String user_name;	//이름
 	private String user_level;	//등급
+	private String user_team;
+	private String user_job;
 	private String user_yn;
 	
 	//tb_menu테이블
@@ -74,6 +77,12 @@ public class Users {
 	public void setUser_code(String user_code) {
 		this.user_code = user_code;
 	}
+	public String getUser_eNum() {
+		return user_eNum;
+	}
+	public void setUser_eNum(String user_eNum) {
+		this.user_eNum = user_eNum;
+	}
 	public String getUser_id() {
 		return user_id;
 	}
@@ -97,6 +106,18 @@ public class Users {
 	}
 	public void setUser_level(String user_level) {
 		this.user_level = user_level;
+	}
+	public String getUser_team() {
+		return user_team;
+	}
+	public void setUser_team(String user_team) {
+		this.user_team = user_team;
+	}
+	public String getUser_job() {
+		return user_job;
+	}
+	public void setUser_job(String user_job) {
+		this.user_job = user_job;
 	}
 	public String getUser_yn() {
 		return user_yn;

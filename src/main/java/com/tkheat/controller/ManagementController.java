@@ -41,14 +41,21 @@ public class ManagementController {
 	       
 	    }
 	 
+	 @RequestMapping(value = "/management/userinsert", method = RequestMethod.GET)
+	    public String userinsert(Users users) {
+	        return "/management/userinsert.jsp";
+	       
+	    }
+	 
+	 
 	 @RequestMapping(value = "/management/authority/user", method = RequestMethod.POST) 
-	   
 	    @ResponseBody 
-	
 	    public List<Users> getUserList() {
 
 	        return managementService.getUserList(); 
 	    }
+	 
+	 
 	 
 	 @RequestMapping(value = "/management/authority/big_Page", method = RequestMethod.POST) 
 	   
@@ -68,7 +75,9 @@ public class ManagementController {
 	    
 	     return managementService.getSmallPageList(pageBig); 
 	 }
-
+	 
+	
+	 
 
 }
 

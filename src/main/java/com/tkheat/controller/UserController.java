@@ -36,22 +36,17 @@ public class UserController {
 		Users loginUser = userService.getLoginUser(users);
 		
 		String result = "";
-
-		if(loginUser == null) {
-			result = "fail";
-			return result;
-		}else {
-			//사용자가 로그인 했을 때
-			Users menuCount = userService.userMenuSelectCount(users);
-				
-			if(menuCount == null) {
-				//선택한 메뉴가 없는 사용자	
-				result = "/tkheat/user/userMenuNoSelect";
-			}else {
-				//선택한 메뉴가 있는 사용자
-				result = "/tkheat/user/usersMenuOkSelect";
-			}
-		}
+		System.out.println(users);
+		System.out.println(users.getUser_id());
+		System.out.println(users.getUser_pw());
+		/*
+		 * if(loginUser == null) { result = "fail"; return result; }else { //사용자가 로그인 했을
+		 * 때 Users menuCount = userService.userMenuSelectCount(users);
+		 * 
+		 * if(menuCount == null) { //선택한 메뉴가 없는 사용자 result =
+		 * "/tkheat/user/userMenuNoSelect"; }else { //선택한 메뉴가 있는 사용자 result =
+		 * "/tkheat/user/usersMenuOkSelect"; } }
+		 */
 
 		request.getSession().setAttribute("user", loginUser);
 

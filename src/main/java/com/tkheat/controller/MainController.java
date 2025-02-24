@@ -140,7 +140,7 @@ public class MainController {
     
     @RequestMapping(value= "/", method = RequestMethod.GET)
     public String main(Model model) {
-        return "/index.jsp"; // 
+        return "/login.jsp"; // 
     }
     
     @RequestMapping(value= "/home/test", method = RequestMethod.GET)

@@ -6,6 +6,8 @@
   height: 953px;
   position: relative;
 }
+
+
 .main {
   background: #ffffff;
   width: 1918px;
@@ -35,23 +37,29 @@
   left: 1195px;
   top: 247px;
 }
-.login {
-  background: #1071ef;
-  width: 354px;
-  height: 70px;
-  position: absolute;
-  left: 1263px;
-  top: 602px;
+.login_btn {
+    background: #1071ef;
+    width: 354px;
+    height: 70px;
+    position: absolute;
+    left: 1263px;
+    top: 602px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    border: none; /* 테두리 제거 */
+    border-radius: 5px; /* 모서리 둥글게 설정 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+    transition: background 0.3s, transform 0.2s; /* 부드러운 전환 효과 */
 }
-.text-9 {
-  color: #ffffff;
-  text-align: left;
-  font-family: "Inter-Bold", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  position: absolute;
-  left: 1406px;
-  top: 622px;
+
+.login_btn:hover {
+    background: #005bb5; /* 호버 시 배경색 변경 */
+    transform: translateY(-2px); /* 위로 살짝 이동 */
+}
+
+.login_btn:active {
+    transform: translateY(0); /* 클릭 시 원래 위치로 복귀 */
 }
 .id-input {
   background: #213851;
@@ -103,8 +111,8 @@
   width: 531px;
   height: 36px;
 }
-.text-7 {
-  color: #ababab;
+#n_id {
+  color: #ffffff;
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
   font-size: 20px;
@@ -112,9 +120,10 @@
   position: absolute;
   left: 1290px;
   top: 402px;
+  outline: none;
 }
-.text-8 {
-  color: #ababab;
+#n_pw {
+  color: #ffffff;
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
   font-size: 20px;
@@ -122,6 +131,7 @@
   position: absolute;
   left: 1290px;
   top: 529px;
+  outline: none;
 }
 .text-5 {
   color: #f3f3f3;
