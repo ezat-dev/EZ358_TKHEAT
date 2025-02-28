@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tkheat.dao.ManagementDao;
+import com.tkheat.domain.Permission;
 import com.tkheat.domain.Users;
 
 @Service
 public class ManagementServiceImpl implements ManagementService {
 	@Autowired
 	private ManagementDao managementDao;
+	
 	@Override
 	public List<Users> getUserList(){
 		return managementDao.getUserList();
@@ -21,9 +23,18 @@ public class ManagementServiceImpl implements ManagementService {
 		return managementDao.getBigPageList();
 	}
 	
-	  @Override
-	    public List<Users> getSmallPageList(String page_big) {  
-	        return managementDao.getSmallPageList(page_big);  
-	    }
+	@Override
+	public List<Users> getSmallPageList(String page_big) {  
+		return managementDao.getSmallPageList(page_big);  
+	}
+	
+	@Override
+	public Permission authorityUserSelect(Permission permission) {
+		return managementDao.authorityUserSelect(permission);
+	}
+	@Override
+	public void authorityUserSelectSave(Permission permission) {
+		managementDao.authorityUserSelectSave(permission);
+	}
 	
 }

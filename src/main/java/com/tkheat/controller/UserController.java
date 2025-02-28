@@ -36,16 +36,17 @@ public class UserController {
 		Users loginUser = userService.getLoginUser(users);
 		
 		String result = "";
+		/*
 		System.out.println(users);
 		System.out.println(users.getUser_id());
 		System.out.println(users.getUser_pw());
-		/*
-		 * if(loginUser == null) { result = "fail"; return result; }else { //사용자가 로그인 했을
-		 * 때 Users menuCount = userService.userMenuSelectCount(users);
-		 * 
-		 * if(menuCount == null) { //선택한 메뉴가 없는 사용자 result =
-		 * "/tkheat/user/userMenuNoSelect"; }else { //선택한 메뉴가 있는 사용자 result =
-		 * "/tkheat/user/usersMenuOkSelect"; } }
+		
+		  if(loginUser == null) { result = "fail"; return result; }else { //사용자가 로그인 했을
+		  때 Users menuCount = userService.userMenuSelectCount(users);
+		  
+		  if(menuCount == null) { //선택한 메뉴가 없는 사용자 result =
+		  "/tkheat/user/userMenuNoSelect"; }else { //선택한 메뉴가 있는 사용자 result =
+		  "/tkheat/user/usersMenuOkSelect"; } }
 		 */
 
 		request.getSession().setAttribute("user", loginUser);
@@ -73,8 +74,8 @@ public class UserController {
 		Users users = (Users)session.getAttribute("user");
 		StringBuffer desc = new StringBuffer();
 		
-		users.setMenu_name(menu);
-		users.setMenu_url(link);
+//		users.setMenu_name(menu);
+//		users.setMenu_url(link);
 		
 		if(users != null) {
 			userService.userMenuClick(users);
@@ -125,7 +126,7 @@ public class UserController {
 			HttpSession session, @RequestParam String name) {
 		String result = "N";
 		Users users = (Users)session.getAttribute("user");
-		users.setMenu_name(name);
+//		users.setMenu_name(name);
 		
 		if(users != null) {
 			userService.userMenuDelete(users);

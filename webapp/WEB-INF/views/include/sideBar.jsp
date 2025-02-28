@@ -8,12 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/tkheat/css/login/style.css">
 
-      <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js">
-
-
+	<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+  
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <link rel="stylesheet" href="/tkheat/css/sideBar/styles.css">
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script> -->
+    <link rel="stylesheet" href="/tkheat/css/login/style2.css">
+    <link rel="stylesheet" href="/tkheat/css/tabulator/tabulator_simple.css">
+    <script src="/tkheat/js/tabulator/tabulator.js"></script>
+  
   <title>태경열처리</title>
 </head>
 
@@ -145,7 +150,7 @@
                         <span class="nav_name">기준정보</span>
                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                         <ul class="collapse__menu">
-                            <li><a href="#" class="collapse__sublink" onclick="updateHeader('거래처등록')">거래처등록</a></li>
+                            <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/cutumInsert','거래처등록')">거래처등록</a></li>
 					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('제품등록')">제품등록</a></li>
 					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('설비등록')">설비등록</a></li>
 					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('침탄로작업표준')">침탄로작업표준</a></li>
@@ -172,6 +177,7 @@
     </div>
     
      <script>
+
         // 메뉴 클릭 시 헤더 업데이트
         function updateHeader(menuName) {
             document.getElementById('header-title').innerText = menuName;

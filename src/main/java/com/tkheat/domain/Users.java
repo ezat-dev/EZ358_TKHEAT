@@ -2,98 +2,40 @@ package com.tkheat.domain;
 
 public class Users {
 
-	//tb_user테이블
-	private String user_code;
-	private String user_eNum;
+	//USERT테이블(작업자 등록)
+	private int user_code;
+	private String user_no;
+	private String user_name;
+	private String user_buso;
+	private String user_jick;
+	private String user_bigo;
+	private String user_jdate;
+	private String user_odate;
+	private String user_ret;
+	private String user_seq;
+	private String user_add;
 	private String user_id;
-	private String user_pw;
-	private String user_name;	//이름
-	private String user_level;	//등급
-	private String user_team;
-	private String user_job;
-	private String user_yn;
-	
-	//tb_menu테이블
-	private String menu_name;
-	private String menu_url;
-	private String menu_regdate;
-	private String menu_yn;
-	
-	//메뉴 탭 정보
-	private int tab_idx;
-	private String tab_id;
-	
-	//tb_page
-	private String page_code;
-	private String page_big;
-	private String page_sml;
-	private String page_big_name;
-	private String page_sml_name;
-	private String page_yn;
+	private String user_pwd;
+	private String user_phone;
+	private String user_sms;
+	private String user_chigu;
+	private String user_chkfac;
+	private String user_suri;
+	private String user_coilchk;
+	private String user_plugchk;
 	
 	
-	
-
-	
-	public String getPage_sml() {
-		return page_sml;
-	}
-	public void setPage_sml(String page_sml) {
-		this.page_sml = page_sml;
-	}
-	public String getPage_code() {
-		return page_code;
-	}
-	public void setPage_code(String page_code) {
-		this.page_code = page_code;
-	}
-	public String getPage_big() {
-		return page_big;
-	}
-	public void setPage_big(String page_big) {
-		this.page_big = page_big;
-	}
-	public String getPage_big_name() {
-		return page_big_name;
-	}
-	public void setPage_big_name(String page_big_name) {
-		this.page_big_name = page_big_name;
-	}
-	public String getPage_sml_name() {
-		return page_sml_name;
-	}
-	public void setPage_sml_name(String page_sml_name) {
-		this.page_sml_name = page_sml_name;
-	}
-	public String getPage_yn() {
-		return page_yn;
-	}
-	public void setPage_yn(String page_yn) {
-		this.page_yn = page_yn;
-	}
-	public String getUser_code() {
+	public int getUser_code() {
 		return user_code;
 	}
-	public void setUser_code(String user_code) {
+	public void setUser_code(int user_code) {
 		this.user_code = user_code;
 	}
-	public String getUser_eNum() {
-		return user_eNum;
+	public String getUser_no() {
+		return user_no;
 	}
-	public void setUser_eNum(String user_eNum) {
-		this.user_eNum = user_eNum;
-	}
-	public String getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
-	}
-	public String getUser_pw() {
-		return user_pw;
-	}
-	public void setUser_pw(String user_pw) {
-		this.user_pw = user_pw;
+	public void setUser_no(String user_no) {
+		this.user_no = user_no;
 	}
 	public String getUser_name() {
 		return user_name;
@@ -101,68 +43,108 @@ public class Users {
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
 	}
-	public String getUser_level() {
-		return user_level;
+	public String getUser_buso() {
+		return user_buso;
 	}
-	public void setUser_level(String user_level) {
-		this.user_level = user_level;
+	public void setUser_buso(String user_buso) {
+		this.user_buso = user_buso;
 	}
-	public String getUser_team() {
-		return user_team;
+	public String getUser_jick() {
+		return user_jick;
 	}
-	public void setUser_team(String user_team) {
-		this.user_team = user_team;
+	public void setUser_jick(String user_jick) {
+		this.user_jick = user_jick;
 	}
-	public String getUser_job() {
-		return user_job;
+	public String getUser_bigo() {
+		return user_bigo;
 	}
-	public void setUser_job(String user_job) {
-		this.user_job = user_job;
+	public void setUser_bigo(String user_bigo) {
+		this.user_bigo = user_bigo;
 	}
-	public String getUser_yn() {
-		return user_yn;
+	public String getUser_jdate() {
+		return user_jdate;
 	}
-	public void setUser_yn(String user_yn) {
-		this.user_yn = user_yn;
+	public void setUser_jdate(String user_jdate) {
+		this.user_jdate = user_jdate;
+	}
+	public String getUser_odate() {
+		return user_odate;
+	}
+	public void setUser_odate(String user_odate) {
+		this.user_odate = user_odate;
+	}
+	public String getUser_ret() {
+		return user_ret;
+	}
+	public void setUser_ret(String user_ret) {
+		this.user_ret = user_ret;
+	}
+	public String getUser_seq() {
+		return user_seq;
+	}
+	public void setUser_seq(String user_seq) {
+		this.user_seq = user_seq;
+	}
+	public String getUser_add() {
+		return user_add;
+	}
+	public void setUser_add(String user_add) {
+		this.user_add = user_add;
+	}
+	public String getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+	public String getUser_pwd() {
+		return user_pwd;
+	}
+	public void setUser_pwd(String user_pwd) {
+		this.user_pwd = user_pwd;
+	}
+	public String getUser_phone() {
+		return user_phone;
+	}
+	public void setUser_phone(String user_phone) {
+		this.user_phone = user_phone;
+	}
+	public String getUser_sms() {
+		return user_sms;
+	}
+	public void setUser_sms(String user_sms) {
+		this.user_sms = user_sms;
+	}
+	public String getUser_chigu() {
+		return user_chigu;
+	}
+	public void setUser_chigu(String user_chigu) {
+		this.user_chigu = user_chigu;
+	}
+	public String getUser_chkfac() {
+		return user_chkfac;
+	}
+	public void setUser_chkfac(String user_chkfac) {
+		this.user_chkfac = user_chkfac;
+	}
+	public String getUser_suri() {
+		return user_suri;
+	}
+	public void setUser_suri(String user_suri) {
+		this.user_suri = user_suri;
+	}
+	public String getUser_coilchk() {
+		return user_coilchk;
+	}
+	public void setUser_coilchk(String user_coilchk) {
+		this.user_coilchk = user_coilchk;
+	}
+	public String getUser_plugchk() {
+		return user_plugchk;
+	}
+	public void setUser_plugchk(String user_plugchk) {
+		this.user_plugchk = user_plugchk;
 	}
 	
-	//메뉴
-	public String getMenu_name() {
-		return menu_name;
-	}
-	public void setMenu_name(String menu_name) {
-		this.menu_name = menu_name;
-	}
-	public String getMenu_url() {
-		return menu_url;
-	}
-	public void setMenu_url(String menu_url) {
-		this.menu_url = menu_url;
-	}
-	public String getMenu_regdate() {
-		return menu_regdate;
-	}
-	public void setMenu_regdate(String menu_regdate) {
-		this.menu_regdate = menu_regdate;
-	}
-	public String getMenu_yn() {
-		return menu_yn;
-	}
-	public void setMenu_yn(String menu_yn) {
-		this.menu_yn = menu_yn;
-	}
-	
-	public int getTab_idx() {
-		return tab_idx;
-	}
-	public void setTab_idx(int tab_idx) {
-		this.tab_idx = tab_idx;
-	}
-	public String getTab_id() {
-		return tab_id;
-	}
-	public void setTab_id(String tab_id) {
-		this.tab_id = tab_id;
-	}
 	
 }
