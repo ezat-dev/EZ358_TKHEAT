@@ -46,7 +46,7 @@ public class ManagementController {
 	 
 	 
 	 //전체 거래처목록 조회
-	 @RequestMapping(value = "/management/authority/userList", method = RequestMethod.POST) 
+	 @RequestMapping(value = "/management/authority/cutumList", method = RequestMethod.POST) 
 	 @ResponseBody 
 	 public Map<String, Object> getCutumUserList() {
 		 Map<String, Object> rtnMap = new HashMap<String, Object>();
