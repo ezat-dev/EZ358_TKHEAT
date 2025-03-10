@@ -2,7 +2,10 @@ package com.tkheat.dao;
 
 import java.util.List;
 
+import com.tkheat.domain.Corp;
+import com.tkheat.domain.Fac;
 import com.tkheat.domain.Permission;
+import com.tkheat.domain.Product;
 import com.tkheat.domain.Users;
 
 public interface ManagementDao {
@@ -16,5 +19,11 @@ public interface ManagementDao {
 
 	void authorityUserSelectSave(Permission permission);
 	
-
+	List<Corp> getCorpList(); 
+	
+	List<Fac> getFacList();
+	
+	
+	
+	void insertUser(Users users);
 }

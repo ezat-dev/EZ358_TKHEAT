@@ -1,0 +1,440 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* 사용하고자 하는 폰트로 변경 */
+}
+
+.main {
+    margin-left: 225px;
+    margin-right:8px; 
+    margin-top : 90px;
+    width : 87.85%;
+    height: calc(100vh - 102px); 
+    background-color: #ffffff; 
+    padding: 1rem; 
+     /* border : 1px solid rgb(53, 53, 53);  */
+    border-radius: 0px 0px 6px 6px;
+	}
+	
+	
+	.tab {
+    margin-left: 117px;
+    margin-right: 8px;
+    margin-top: 5px; 
+    height: 53px; /* 기존 높이 */
+    background-color: #33363d; 
+    /* border: 1px solid rgb(53, 53, 53);  */  
+    border-radius: 6px 6px 0px 0px;
+    display: flex; /* 플렉스 박스로 설정 */
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: space-between; /* 좌우 정렬 */
+	}
+	
+	.button-container {
+	    display: flex; /* 버튼들을 수평으로 나열 */
+	    gap: 10px; /* 버튼 사이 여백 */
+	    margin-left: auto; /* 왼쪽 여백을 자동으로 설정하여 오른쪽으로 정렬 */
+	    margin-right: 10px; /* 오른쪽 여백 */
+	}
+	
+	.select-button {
+	    height: 40px; /* tab보다 조금 작게 설정 */
+	    padding: 0 11px; /* 좌우 패딩 */
+	    border: 1px solid rgb(53, 53, 53);
+	    border-radius: 4px; /* 모서리 둥글게 */
+	    background-color: #ffffff; /* 배경색 */
+	    cursor: pointer; /* 포인터 커서 */
+	    display: flex; /* 내부 요소를 플렉스 박스로 설정 */
+	    align-items: center; /* 버튼 안에서 세로 가운데 정렬 */
+	}
+	.insert-button {
+	    height: 40px; /* tab보다 조금 작게 설정 */
+	    padding: 0 11px; /* 좌우 패딩 */
+	    border: 1px solid rgb(53, 53, 53);
+	    border-radius: 4px; /* 모서리 둥글게 */
+	    background-color: #ffffff; /* 배경색 */
+	    cursor: pointer; /* 포인터 커서 */
+	    display: flex; /* 내부 요소를 플렉스 박스로 설정 */
+	    align-items: center; /* 버튼 안에서 세로 가운데 정렬 */
+	}
+	.excel-button {
+	    height: 40px; /* tab보다 조금 작게 설정 */
+	    padding: 0 11px; /* 좌우 패딩 */
+	    border: 1px solid rgb(53, 53, 53);
+	    border-radius: 4px; /* 모서리 둥글게 */
+	    background-color: #ffffff; /* 배경색 */
+	    cursor: pointer; /* 포인터 커서 */
+	    display: flex; /* 내부 요소를 플렉스 박스로 설정 */
+	    align-items: center; /* 버튼 안에서 세로 가운데 정렬 */
+	}
+	.printer-button {
+	    height: 40px; /* tab보다 조금 작게 설정 */
+	    padding: 0 11px; /* 좌우 패딩 */
+	    border: 1px solid rgb(53, 53, 53);
+	    border-radius: 4px; /* 모서리 둥글게 */
+	    background-color: #ffffff; /* 배경색 */
+	    cursor: pointer; /* 포인터 커서 */
+	    display: flex; /* 내부 요소를 플렉스 박스로 설정 */
+	    align-items: center; /* 버튼 안에서 세로 가운데 정렬 */
+	}
+	
+	/* 버튼 hover 효과 */
+	.select-button:hover {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	.insert-button:hover {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	.excel-button:hover {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	.printer-button:hover {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	.close {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	
+	.button-image {
+	    width: 20px; /* 원하는 너비 설정 */
+	    height: 20px; /* 원하는 높이 설정 */
+	    margin-right: 0px; /* 이미지와 텍스트 사이의 여백 */
+	    vertical-align: middle; /* 세로 가운데 정렬 */
+	}
+	
+	
+
+
+
+
+
+
+
+
+
+
+.user-insert-box {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 1349px;
+  height: 439.04px;
+  position: absolute;
+  left: 71px;
+  top: 119px;
+}
+.user-inser-header {
+  background: #33363d;
+  width: 1346.55px;
+  height: 53.96px;
+  position: absolute;
+  left: 72.23px;
+  top: 120.23px;
+  font-size : 25px;
+  color : white;
+}
+.user-no-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 126.32px;
+  height: 25.75px;
+  position: absolute;
+  left: 91.85px;
+  top: 193.81px;
+  text-align : center;
+}
+.user-buso-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 126.32px;
+  height: 25.75px;
+  position: absolute;
+  left: 91.85px;
+  top: 222.01px;
+  text-align : center;
+}
+.user-name-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 132.45px;
+  height: 25.75px;
+  position: absolute;
+  left: 738.14px;
+  top: 193.81px;
+  text-align : center;
+}
+.user-jick-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 132.45px;
+  height: 25.75px;
+  position: absolute;
+  left: 738.14px;
+  top: 222.01px;
+  text-align : center;
+}
+.user-jdate-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 126.32px;
+  height: 25.75px;
+  position: absolute;
+  left: 91.85px;
+  top: 250.22px;
+  text-align : center;
+}
+.user-odate-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 132.45px;
+  height: 25.75px;
+  position: absolute;
+  left: 738.14px;
+  top: 250.22px;
+  text-align : center;
+}
+.user-id-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 126.32px;
+  height: 25.75px;
+  position: absolute;
+  left: 91.85px;
+  top: 278.43px;
+  text-align : center;
+}
+.user-pwd-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 132.45px;
+  height: 25.75px;
+  position: absolute;
+  left: 738.14px;
+  top: 278.43px;
+  text-align : center;
+}
+.user-phone-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 126.32px;
+  height: 41.7px;
+  position: absolute;
+  left: 91.85px;
+  top: 306.63px;
+  text-align : center;
+}
+.user-add-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 126.32px;
+  height: 25.75px;
+  position: absolute;
+  left: 91.85px;
+  top: 350.78px;
+  text-align : center;
+}
+.user-bigo-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 126.32px;
+  height: 44.15px;
+  position: absolute;
+  left: 91.85px;
+  top: 378.99px;
+  text-align : center;
+}
+.user-sms-box {
+  background: #dddddd;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 132.45px;
+  height: 41.7px;
+  position: absolute;
+  left: 738.14px;
+  top: 306.63px;
+  text-align : center;
+}
+.user-no {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 515.07px;
+  height: 25.75px;
+  position: absolute;
+  left: 220.62px;
+  top: 193.81px;
+}
+.user-name {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 515.07px;
+  height: 25.75px;
+  position: absolute;
+  left: 873.04px;
+  top: 193.81px;
+}
+.user-buso {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 515.07px;
+  height: 25.75px;
+  position: absolute;
+  left: 220.62px;
+  top: 222.01px;
+}
+.user-jick {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 515.07px;
+  height: 25.75px;
+  position: absolute;
+  left: 873.04px;
+  top: 222.01px;
+}
+.user-jdate {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 132.45px;
+  height: 25.75px;
+  position: absolute;
+  left: 220.62px;
+  top: 250.22px;
+}
+.user-odate {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 132.45px;
+  height: 25.75px;
+  position: absolute;
+  left: 873.04px;
+  top: 250.22px;
+}
+.user-id {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 515.07px;
+  height: 25.75px;
+  position: absolute;
+  left: 220.62px;
+  top: 278.43px;
+}
+.user-pwd {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 515.07px;
+  height: 25.75px;
+  position: absolute;
+  left: 873.04px;
+  top: 278.43px;
+}
+.user-phone {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 515.07px;
+  height: 25.75px;
+  position: absolute;
+  left: 220.62px;
+  top: 315.22px;
+}
+.user-add {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 1167.5px;
+  height: 25.75px;
+  position: absolute;
+  left: 220.62px;
+  top: 350.78px;
+}
+.user-bigo {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 1167.5px;
+  height: 44.15px;
+  position: absolute;
+  left: 220.62px;
+  top: 378.99px;
+}
+.save {
+  background: #9d9797;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 141.03px;
+  height: 38.02px;
+  position: absolute;
+  left: 595.88px;
+  top: 463.61px;
+  text-align : center;
+  cursor: pointer;
+}
+.close {
+  background: #9d9797;
+  border-style: solid;
+  border-color: #949494;
+  border-width: 1px;
+  width: 141.03px;
+  height: 38.02px;
+  position: absolute;
+  left: 754.08px;
+  top: 463.61px;
+  text-align : center;
+  cursor: pointer;
+}
+
+
+.userModal {
+    position: fixed; /* 화면에 고정 */
+    top: 10%; /* 수직 중앙 */
+    left: 15%; /* 수평 중앙 */
+    display : none;
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+}
+
+	

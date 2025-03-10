@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tkheat.dao.ManagementDao;
+import com.tkheat.domain.Corp;
+import com.tkheat.domain.Fac;
 import com.tkheat.domain.Permission;
+import com.tkheat.domain.Product;
 import com.tkheat.domain.Users;
 
 @Service
@@ -36,5 +39,24 @@ public class ManagementServiceImpl implements ManagementService {
 	public void authorityUserSelectSave(Permission permission) {
 		managementDao.authorityUserSelectSave(permission);
 	}
+	
+	@Override
+	public List<Corp> getCorpList(){
+		return managementDao.getCorpList();
+	}
+	
+	@Override
+	public List<Fac> getFacList(){
+		return managementDao.getFacList();
+	}
+	
+	
+	
+	@Override
+    public void insertUser(Users users) {
+        managementDao.insertUser(users); 
+    
+    }
+	
 	
 }

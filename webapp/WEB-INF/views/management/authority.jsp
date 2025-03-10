@@ -7,32 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>권한 설정</title>
     <%@ include file="../include/sideBar.jsp" %>
+    <link rel="stylesheet" href="/tkheat/css/management/authority.css">
     
     
     <style>
-    .main {
-    margin-left: 225px;
-    margin-right:8px; 
-    margin-top : 70px;
-    width : 87.85%;
-    height: calc(100vh - 80px); 
-    background-color: #ffffff; 
-    padding: 1rem; 
-     /* border : 1px solid rgb(53, 53, 53);  */
-    border-radius: 0px 0px 6px 6px;
-	}
-	.tab {
-    margin-left: 117px;
-    margin-right:8px;
-    margin-top: 5px; 
-    height: 33px;
-    /* padding: 1rem; */
-    background-color: #ffffff; 
-     /* border : 1px solid rgb(53, 53, 53);   */
-    border-radius: 6px 6px 0px 0px;
-	}
-	
-	
+
+
 	
 	.container {
             display: flex;
@@ -73,7 +53,30 @@
     
     <body>
     
-    <div class="tab"></div>
+    <div class="tab">
+    <p class="tabP" style="font-size:20px; margin-left:40px; color : white; font-weight:800;">사원별 권한등록</p>
+    <div class="button-container">
+        <button class="select-button">
+            <img src="/tkheat/css/image/search-icon.png" alt="select" class="button-image">
+           
+        </button>
+        <button class="insert-button">
+            <img src="/tkheat/css/image/insert-icon.png" alt="insert" class="button-image">
+          
+        </button>
+        <button class="excel-button">
+            <img src="/tkheat/css/image/excel-icon.png" alt="excel" class="button-image">
+            
+        </button>
+        <button class="printer-button">
+            <img src="/tkheat/css/image/printer-icon.png" alt="printer" class="button-image">
+            
+        </button>
+    </div>
+</div>
+
+
+
     <form method="post" id="permissionForm" name="permissionForm">
     	<input type="text" style="display:none;" id="user_code" name="user_code" />
 	 	<main class="main">
@@ -722,6 +725,7 @@
 	    
 	     <div class="container">
 	        <div id="tab1" class="tabulator"></div>
+	        
 	        <!-- <div id="tab2" class="tabulator"></div>
 	        <div id="tab3" class="tabulator"></div>
 	        <div id="tab4" class="tabulator"></div> -->
@@ -1055,7 +1059,7 @@ $(document).ready(function() {
 				});
 
 				var rowData = row.getData();
-//				console.log(rowData.user_code);
+				console.log(rowData);
 				user_code = rowData.user_code;
 				$("#user_code").val(rowData.user_code);
 				$(".userName").text(rowData.user_name);

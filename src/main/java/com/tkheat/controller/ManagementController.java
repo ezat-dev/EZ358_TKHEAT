@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tkheat.domain.Corp;
 import com.tkheat.domain.Permission;
+import com.tkheat.domain.Product;
 import com.tkheat.domain.Users;
+import com.tkheat.domain.Fac;
 import com.tkheat.service.ManagementService;
 
 @Controller
@@ -44,34 +46,127 @@ public class ManagementController {
 		 return "/management/cutumInsert.jsp";
 	 }	 
 	 
+	//설비등록 화면 로드
+		 @RequestMapping(value = "/management/facInsert", method = RequestMethod.GET)
+		 public String facInsert(Users users) {
+			 
+			 return "/management/facInsert.jsp";
+		 }	
+		 
+	//설비등록 화면 로드
+		 @RequestMapping(value = "/management/productInsert", method = RequestMethod.GET)
+		 public String productInsert(Users users) {
+			 
+			 return "/management/productInsert.jsp";
+		 }	 
+		 
+	//설비등록 화면 로드
+		 @RequestMapping(value = "/management/chimStandard", method = RequestMethod.GET)
+		 public String chimStandard(Users users) {
+			 
+			 return "/management/chimStandard.jsp";
+		 }		 
+		 
+		 
+	 
 	 
 	 //전체 거래처목록 조회
-	 @RequestMapping(value = "/management/authority/cutumList", method = RequestMethod.POST) 
+	 @RequestMapping(value = "/management/authority/corpList", method = RequestMethod.POST) 
 	 @ResponseBody 
-	 public Map<String, Object> getCutumUserList() {
+	 public Map<String, Object> getCorpList() {
 		 Map<String, Object> rtnMap = new HashMap<String, Object>();
-		 /*		 
-		 List<Corp> userList = managementService.getCorpList();
+		 		 
+		 List<Corp> corpList = managementService.getCorpList();
 		 
 		 List<HashMap<String, Object>> rtnList = new ArrayList<HashMap<String, Object>>();
-		 for(int i=0; i<userList.size(); i++) {
+		 for(int i=0; i<corpList.size(); i++) {
 			 HashMap<String, Object> rowMap = new HashMap<String, Object>();
 			 rowMap.put("idx", (i+1));
-			 rowMap.put("user_no", userList.get(i).getUser_no());
-			 rowMap.put("user_buso", userList.get(i).getUser_buso());
-			 rowMap.put("user_jick", userList.get(i).getUser_jick());
-			 rowMap.put("user_name", userList.get(i).getUser_name());
-			 rowMap.put("user_code", userList.get(i).getUser_code());
+			 rowMap.put("corp_gubn", corpList.get(i).getCorp_gubn());
+			 rowMap.put("corp_name", corpList.get(i).getCorp_name());
+			 rowMap.put("corp_name2", corpList.get(i).getCorp_name2());
+			 rowMap.put("corp_no", corpList.get(i).getCorp_no());
+			 rowMap.put("corp_tel", corpList.get(i).getCorp_tel());
+			 rowMap.put("corp_fax", corpList.get(i).getCorp_fax());
+			 rowMap.put("corp_boss", corpList.get(i).getCorp_boss());
+			 rowMap.put("corp_mast", corpList.get(i).getCorp_mast());
+			 rowMap.put("corp_plc", corpList.get(i).getCorp_plc());
 			 
 			 rtnList.add(rowMap);
 		 }
 
 		 rtnMap.put("last_page",1);
 		 rtnMap.put("data",rtnList);
-*/		 
+	 
 		 return rtnMap; 
 	 }
 	 
+	 
+	//전체 설비목록 조회
+		 @RequestMapping(value = "/management/authority/facList", method = RequestMethod.POST) 
+		 @ResponseBody 
+		 public Map<String, Object> getfacList() {
+			 Map<String, Object> rtnMap = new HashMap<String, Object>();
+			 		 
+			 List<Fac> facList = managementService.getFacList();
+			 
+			 List<HashMap<String, Object>> rtnList = new ArrayList<HashMap<String, Object>>();
+			 for(int i=0; i<facList.size(); i++) {
+				 HashMap<String, Object> rowMap = new HashMap<String, Object>();
+				 rowMap.put("idx", (i+1));
+				 rowMap.put("fac_no", facList.get(i).getFac_no());
+				 rowMap.put("fac_name", facList.get(i).getFac_name());
+				 rowMap.put("fac_gyu", facList.get(i).getFac_gyu());
+				 rowMap.put("fac_hyun", facList.get(i).getFac_hyun());
+				 rowMap.put("fac_yong", facList.get(i).getFac_yong());
+				 rowMap.put("fac_plc", facList.get(i).getFac_plc());
+				 rowMap.put("fac_able", facList.get(i).getFac_able());
+				 rowMap.put("fac_make", facList.get(i).getFac_make());
+				 rowMap.put("fac_cbuy", facList.get(i).getFac_cbuy());
+				 
+				 rtnList.add(rowMap);
+			 }
+
+			 rtnMap.put("last_page",1);
+			 rtnMap.put("data",rtnList);
+		 
+			 return rtnMap; 
+		 }
+		 
+			/*
+			 * //전체 제품목록 조회
+			 * 
+			 * @RequestMapping(value = "/management/authority/productList", method =
+			 * RequestMethod.POST)
+			 * 
+			 * @ResponseBody public Map<String, Object> getproductList() { Map<String,
+			 * Object> rtnMap = new HashMap<String, Object>();
+			 * 
+			 * List<Product> prodList = managementService.getProductList();
+			 * 
+			 * List<HashMap<String, Object>> rtnList = new ArrayList<HashMap<String,
+			 * Object>>(); for(int i=0; i<prodList.size(); i++) { HashMap<String, Object>
+			 * rowMap = new HashMap<String, Object>(); rowMap.put("idx", (i+1));
+			 * rowMap.put("prod_no", prodList.get(i).getProd_no()); rowMap.put("prod_name",
+			 * prodList.get(i).getProd_name()); rowMap.put("prod_gyu",
+			 * prodList.get(i).getProd_gyu()); rowMap.put("prod_jai",
+			 * prodList.get(i).getProd_jai()); rowMap.put("prod_model",
+			 * prodList.get(i).getProd_model());
+			 * 
+			 * rtnList.add(rowMap); }
+			 * 
+			 * rtnMap.put("last_page",1); rtnMap.put("data",rtnList);
+			 * 
+			 * return rtnMap; }
+			 */ 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 	 
 	 //사원별 권한등록 화면 로드
 	 @RequestMapping(value = "/management/authority", method = RequestMethod.GET)
@@ -80,6 +175,7 @@ public class ManagementController {
 		 return "/management/authority.jsp";	       
 	 }
 	 	 
+	 
 	 //사원별 권한등록 사용자 선택
 	 @RequestMapping(value = "/management/authority/userSelect", method = RequestMethod.POST)
 	 @ResponseBody
@@ -96,6 +192,7 @@ public class ManagementController {
 
 		 return rtnMap;
 	 }
+	 
 	 
 	 //사원별 권한등록 사용자 선택 후 수정
 	 @RequestMapping(value = "/management/authority/userSelectSave", method = RequestMethod.POST)
@@ -132,10 +229,11 @@ public class ManagementController {
 			 rowMap.put("idx", (i+1));
 			 rowMap.put("user_no", userList.get(i).getUser_no());
 			 rowMap.put("user_buso", userList.get(i).getUser_buso());
+			 rowMap.put("user_code", userList.get(i).getUser_code());
 			 rowMap.put("user_jick", userList.get(i).getUser_jick());
 			 rowMap.put("user_name", userList.get(i).getUser_name());
-			 rowMap.put("user_code", userList.get(i).getUser_code());
-			 
+			 rowMap.put("user_jdate", userList.get(i).getUser_jdate());
+			 rowMap.put("user_ret", userList.get(i).getUser_ret());
 			 rtnList.add(rowMap);
 		 }
 		 
@@ -144,6 +242,34 @@ public class ManagementController {
 		 
 		 return rtnMap; 
 	 }
+	 
+	 
+	 
+	// 사용자 등록 
+	    @RequestMapping(value = "/management/authority/userinsert", method = RequestMethod.POST)
+	    @ResponseBody
+	    public Map<String, Object> insertUser(@RequestBody Users users) {
+	        Map<String, Object> rtnMap = new HashMap<>();
+	        try {
+	            managementService.insertUser(users); 
+	            rtnMap.put("status", "success");
+	            rtnMap.put("message", "사용자 등록 성공");
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            rtnMap.put("status", "error");
+	            rtnMap.put("message", "사용자 등록 실패: " + e.getMessage());
+	        }
+	        return rtnMap; 
+	    }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	 
 	 
 	 

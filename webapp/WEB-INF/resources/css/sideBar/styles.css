@@ -1,5 +1,6 @@
-/* GOOGLE FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+
+
 
 /* VARIABLES CSS */
 :root {
@@ -29,6 +30,7 @@
 .tkLogo{
     width: 180px;
     height: 70px;
+    margin-left : -55px;
 }
 
 *, ::before, ::after {
@@ -178,7 +180,8 @@ a {
     transition: .5;
 }
 
-.collapse__menu {
+.collapse__menu
+ {
     display: none;
     padding: 0.75rem 2.25rem; 
     margin-left: 1.5rem; 

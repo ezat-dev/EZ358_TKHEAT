@@ -1,0 +1,683 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* 사용하고자 하는 폰트로 변경 */
+}
+
+.main {
+    margin-left: 225px;
+    margin-right:8px; 
+    margin-top : 90px;
+    width : 87.85%;
+    height: calc(100vh - 102px); 
+    background-color: #ffffff; 
+    padding: 1rem; 
+     /* border : 1px solid rgb(53, 53, 53);  */
+    border-radius: 0px 0px 6px 6px;
+	}
+	
+	
+	.tab {
+    margin-left: 117px;
+    margin-right: 8px;
+    margin-top: 5px; 
+    height: 53px; /* 기존 높이 */
+    background-color: #33363d; 
+    /* border: 1px solid rgb(53, 53, 53);  */  
+    border-radius: 6px 6px 0px 0px;
+    display: flex; /* 플렉스 박스로 설정 */
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: space-between; /* 좌우 정렬 */
+	}
+	
+	.button-container {
+	    display: flex; /* 버튼들을 수평으로 나열 */
+	    gap: 10px; /* 버튼 사이 여백 */
+	    margin-left: auto; /* 왼쪽 여백을 자동으로 설정하여 오른쪽으로 정렬 */
+	    margin-right: 10px; /* 오른쪽 여백 */
+	}
+	
+	.select-button {
+	    height: 40px; /* tab보다 조금 작게 설정 */
+	    padding: 0 11px; /* 좌우 패딩 */
+	    border: 1px solid rgb(53, 53, 53);
+	    border-radius: 4px; /* 모서리 둥글게 */
+	    background-color: #ffffff; /* 배경색 */
+	    cursor: pointer; /* 포인터 커서 */
+	    display: flex; /* 내부 요소를 플렉스 박스로 설정 */
+	    align-items: center; /* 버튼 안에서 세로 가운데 정렬 */
+	}
+	.insert-button {
+	    height: 40px; /* tab보다 조금 작게 설정 */
+	    padding: 0 11px; /* 좌우 패딩 */
+	    border: 1px solid rgb(53, 53, 53);
+	    border-radius: 4px; /* 모서리 둥글게 */
+	    background-color: #ffffff; /* 배경색 */
+	    cursor: pointer; /* 포인터 커서 */
+	    display: flex; /* 내부 요소를 플렉스 박스로 설정 */
+	    align-items: center; /* 버튼 안에서 세로 가운데 정렬 */
+	}
+	.excel-button {
+	    height: 40px; /* tab보다 조금 작게 설정 */
+	    padding: 0 11px; /* 좌우 패딩 */
+	    border: 1px solid rgb(53, 53, 53);
+	    border-radius: 4px; /* 모서리 둥글게 */
+	    background-color: #ffffff; /* 배경색 */
+	    cursor: pointer; /* 포인터 커서 */
+	    display: flex; /* 내부 요소를 플렉스 박스로 설정 */
+	    align-items: center; /* 버튼 안에서 세로 가운데 정렬 */
+	}
+	.printer-button {
+	    height: 40px; /* tab보다 조금 작게 설정 */
+	    padding: 0 11px; /* 좌우 패딩 */
+	    border: 1px solid rgb(53, 53, 53);
+	    border-radius: 4px; /* 모서리 둥글게 */
+	    background-color: #ffffff; /* 배경색 */
+	    cursor: pointer; /* 포인터 커서 */
+	    display: flex; /* 내부 요소를 플렉스 박스로 설정 */
+	    align-items: center; /* 버튼 안에서 세로 가운데 정렬 */
+	}
+	
+	/* 버튼 hover 효과 */
+	.select-button:hover {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	.insert-button:hover {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	.excel-button:hover {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	.printer-button:hover {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	.close {
+	    background-color: #f0f0f0; /* hover 시 색상 변화 */
+	}
+	
+	.button-image {
+	    width: 20px; /* 원하는 너비 설정 */
+	    height: 20px; /* 원하는 높이 설정 */
+	    margin-right: 0px; /* 이미지와 텍스트 사이의 여백 */
+	    vertical-align: middle; /* 세로 가운데 정렬 */
+	}
+	
+	
+
+
+
+
+
+
+
+
+
+
+.fac-main {
+  background: #ffffff;
+  width: 1123.6px;
+  height: 713.22px;
+  position: absolute;
+  left: 171px;
+  top: 46px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+.fac-header {
+  background: #33363d;
+  width: 1123.6px;
+  height: 49.38px;
+  position: absolute;
+  left: 171px;
+  top: 46px;
+  font-size: 25px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+._1 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 187.46px;
+  top: 112.93px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._2 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 732.8px;
+  top: 112.93px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._3 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 187.46px;
+  top: 138.17px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._4 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 732.8px;
+  top: 138.17px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._5 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 187.46px;
+  top: 163.41px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._6 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 732.8px;
+  top: 163.41px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._7 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 187.46px;
+  top: 188.64px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._8 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 732.8px;
+  top: 188.64px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._9 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 187.46px;
+  top: 213.88px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._10 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 732.8px;
+  top: 213.88px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._11 {
+  background: #dddddd;
+  width: 108.63px;
+  height: 23.04px;
+  position: absolute;
+  left: 187.46px;
+  top: 239.12px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._12 {
+  background: #dddddd;
+  width: 64.74px;
+  height: 23.04px;
+  position: absolute;
+  left: 189.65px;
+  top: 279.72px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  font-size : 12px;
+}
+._13 {
+  background: #dddddd;
+  width: 94.36px;
+  height: 23.04px;
+  position: absolute;
+  left: 443.12px;
+  top: 279.72px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._14 {
+  background: #dddddd;
+  width: 64.74px;
+  height: 23.04px;
+  position: absolute;
+  left: 189.65px;
+  top: 304.95px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._15 {
+  background: #dddddd;
+  width: 94.36px;
+  height: 23.04px;
+  position: absolute;
+  left: 443.12px;
+  top: 304.95px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  font-size : 14px;
+}
+._16 {
+  background: #dddddd;
+  width: 64.74px;
+  height: 23.04px;
+  position: absolute;
+  left: 189.65px;
+  top: 330.19px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._17 {
+  background: #dddddd;
+  width: 94.36px;
+  height: 23.04px;
+  position: absolute;
+  left: 443.12px;
+  top: 330.19px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._18 {
+  background: #dddddd;
+  width: 64.74px;
+  height: 23.04px;
+  position: absolute;
+  left: 189.65px;
+  top: 355.43px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._19 {
+  background: #dddddd;
+  width: 94.36px;
+  height: 23.04px;
+  position: absolute;
+  left: 443.12px;
+  top: 355.43px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  font-size : 13px;
+}
+._20 {
+  background: #dddddd;
+  width: 82.29px;
+  height: 23.04px;
+  position: absolute;
+  left: 189.65px;
+  top: 397.12px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._21 {
+  background: #dddddd;
+  width: 82.29px;
+  height: 23.04px;
+  position: absolute;
+  left: 189.65px;
+  top: 422.36px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  font-size : 12px;
+}
+._22 {
+  background: #dddddd;
+  width: 54.86px;
+  height: 23.04px;
+  position: absolute;
+  left: 471.65px;
+  top: 422.36px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  font-size : 13px;
+}
+._23 {
+  background: #dddddd;
+  width: 196.41px;
+  height: 39.5px;
+  position: absolute;
+  left: 189.65px;
+  top: 464.06px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._24 {
+  background: #dddddd;
+  width: 196.41px;
+  height: 39.5px;
+  position: absolute;
+  left: 189.65px;
+  top: 505.75px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._25 {
+  background: #dddddd;
+  width: 196.41px;
+  height: 85.59px;
+  position: absolute;
+  left: 189.65px;
+  top: 547.45px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._26 {
+  background: #dddddd;
+  width: 55.96px;
+  height: 252.37px;
+  position: absolute;
+  left: 738.29px;
+  top: 278.62px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+._27 {
+  background: #dddddd;
+  width: 118.5px;
+  height: 85.59px;
+  position: absolute;
+  left: 738.29px;
+  top: 532.09px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.fac-no {
+  width: 432.32px;
+  height: 23.04px;
+  position: absolute;
+  left: 298.28px;
+  top: 112.93px;
+}
+.fac-name {
+  width: 432.32px;
+  height: 23.04px;
+  position: absolute;
+  left: 843.62px;
+  top: 112.93px;
+}
+.fac-gyu {
+  width: 422.45px;
+  height: 18.65px;
+  position: absolute;
+  left: 298.28px;
+  top: 140.36px;
+}
+.fac-hyun {
+  width: 432.32px;
+  height: 23.04px;
+  position: absolute;
+  left: 843.62px;
+  top: 138.17px;
+}
+.fac-yong {
+  width: 432.32px;
+  height: 23.04px;
+  position: absolute;
+  left: 298.28px;
+  top: 163.41px;
+}
+.tech-no {
+  width: 114.12px;
+  height: 23.04px;
+  position: absolute;
+  left: 843.62px;
+  top: 163.41px;
+}
+.fac-man-1 {
+  width: 432.32px;
+  height: 23.04px;
+  position: absolute;
+  left: 298.28px;
+  top: 188.64px;
+}
+.fac-man-2 {
+  width: 432.32px;
+  height: 23.04px;
+  position: absolute;
+  left: 843.62px;
+  top: 188.64px;
+}
+.fac-lot {
+  width: 432.32px;
+  height: 23.04px;
+  position: absolute;
+  left: 298.28px;
+  top: 213.88px;
+}
+.fac-e-1 {
+  width: 432.32px;
+  height: 23.04px;
+  position: absolute;
+  left: 843.62px;
+  top: 213.88px;
+}
+.fac-plc {
+  width: 977.66px;
+  height: 23.04px;
+  position: absolute;
+  left: 298.28px;
+  top: 239.12px;
+}
+.fac-e-2 {
+  width: 184.34px;
+  height: 23.04px;
+  position: absolute;
+  left: 256.59px;
+  top: 279.72px;
+}
+.fac-make {
+  width: 185.44px;
+  height: 23.04px;
+  position: absolute;
+  left: 539.68px;
+  top: 279.72px;
+}
+.fac-cbuy {
+  width: 184.34px;
+  height: 23.04px;
+  position: absolute;
+  left: 256.59px;
+  top: 304.95px;
+}
+.fac-e-3 {
+  width: 185.44px;
+  height: 23.04px;
+  position: absolute;
+  left: 539.68px;
+  top: 304.95px;
+}
+.fac-buy {
+  width: 118.5px;
+  height: 23.04px;
+  position: absolute;
+  left: 256.59px;
+  top: 330.19px;
+}
+.fac-mday {
+  width: 118.5px;
+  height: 23.04px;
+  position: absolute;
+  left: 539.68px;
+  top: 330.19px;
+}
+.fac-mon {
+  width: 118.5px;
+  height: 23.04px;
+  position: absolute;
+  left: 256.59px;
+  top: 355.43px;
+}
+.fac-dan {
+  width: 14.26px;
+  height: 14.26px;
+  position: absolute;
+  left: 539.68px;
+  top: 360.91px;
+}
+.fac-able {
+  width: 450.98px;
+  height: 23.04px;
+  position: absolute;
+  left: 274.14px;
+  top: 397.12px;
+}
+.fac-time {
+  width: 195.31px;
+  height: 23.04px;
+  position: absolute;
+  left: 274.14px;
+  top: 422.36px;
+}
+.fac-test {
+  width: 196.41px;
+  height: 23.04px;
+  position: absolute;
+  left: 528.71px;
+  top: 422.36px;
+}
+.fac-e-4 {
+  width: 336.86px;
+  height: 39.5px;
+  position: absolute;
+  left: 388.26px;
+  top: 464.06px;
+}
+.fac-bigo {
+  width: 336.86px;
+  height: 39.5px;
+  position: absolute;
+  left: 388.26px;
+  top: 505.75px;
+}
+.fac-cau {
+  width: 336.86px;
+  height: 85.59px;
+  position: absolute;
+  left: 388.26px;
+  top: 547.45px;
+}
+.file-upload {
+  width: 74.61px;
+  height: 24.14px;
+  position: absolute;
+  left: 796.44px;
+  top: 278.62px;
+}
+.image-preview {
+  width: 466.34px;
+  height: 226.04px;
+  position: absolute;
+  left: 796.44px;
+  top: 304.95px;
+}
+.fac-unus {
+  width: 403.79px;
+  height: 85.59px;
+  position: absolute;
+  left: 858.98px;
+  top: 532.09px;
+}
+
+.save {
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    background-color: #FFD700; /* 노란색 배경 */
+    color: black; /* 검은색 글자 */
+    border: 2px solid #FFC107; /* 테두리 색상 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    font-weight: bold; /* 글자 두께 */
+    text-align: center; /* 중앙 정렬 */
+    cursor: pointer; /* 마우스 커서 변경 */
+    transition: background-color 0.3s, transform 0.2s; /* 부드러운 효과 */
+    line-height: 35px; /* 텍스트 수직 중앙 정렬 */
+    left: 598.93px;
+    top: 669.25px;
+}
+.close {
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    background-color: #A9A9A9; /* 회색 배경 */
+    color: black; /* 흰색 글자 */
+    border: 2px solid #808080; /* 어두운 회색 테두리 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    font-weight: bold; /* 글자 두께 */
+    text-align: center; /* 중앙 정렬 */
+    cursor: pointer; /* 마우스 커서 변경 */
+    transition: background-color 0.3s, transform 0.2s; /* 부드러운 효과 */
+    line-height: 35px; /* 텍스트 수직 중앙 정렬 */
+    left: 741.58px;
+  top: 669.25px;
+}
+.facModal {
+    position: fixed; /* 화면에 고정 */
+    top: 10%; /* 수직 중앙 */
+    left: 15%; /* 수평 중앙 */
+    display: none;
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+}
+	

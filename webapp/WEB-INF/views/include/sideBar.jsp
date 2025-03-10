@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/tkheat/css/sideBar/styles.css">
 <!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script> -->
-    <link rel="stylesheet" href="/tkheat/css/login/style2.css">
+    
     <link rel="stylesheet" href="/tkheat/css/tabulator/tabulator_simple.css">
     <script src="/tkheat/js/tabulator/tabulator.js"></script>
   
@@ -26,6 +26,8 @@
 <body>
     <header class="header">
         <p id="header-title" style="font-size : 20px;"></p> 
+        
+        
     </header>
     <div class="hhhh"></div>
     <div class="l-navbar" id="navbar" style="overflow-y: auto;">
@@ -150,16 +152,16 @@
                         <span class="nav_name">기준정보</span>
                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                         <ul class="collapse__menu">
-                            <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/cutumInsert','거래처등록')">거래처등록</a></li>
-					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('제품등록')">제품등록</a></li>
-					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('설비등록')">설비등록</a></li>
-					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('침탄로작업표준')">침탄로작업표준</a></li>
-					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('고주파로작업표준')">고주파로작업표준</a></li>
-					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('코일등록')">코일등록</a></li>
-					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('PLUG등록')">PLUG등록</a></li>
+                            <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/cutumInsert','')">거래처등록</a></li>
+					        <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/productInsert', '')">제품등록</a></li>
+					        <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/facInsert', '')">설비등록</a></li>
+					        <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/chimStandard', '')">침탄로작업표준</a></li>
+					        <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/goStandard', '')">고주파로작업표준</a></li>
+					        <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/coilInsert', '')">코일등록</a></li>
+					        <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/plugInsert', '등록')">PLUG등록</a></li>
 					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('PLUG점검기준등록')">PLUG점검기준등록</a></li>
-					        <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/userinsert', '작업자등록')">작업자등록</a></li>
-       						<li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/authority', '사원별권한등록')">사원별권한등록</a></li>
+					        <li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/userinsert', '')">작업자등록</a></li>
+       						<li><a href="#" class="collapse__sublink" onclick="updateHeaderAndNavigate(event, '/tkheat/management/authority', '')">사원별권한등록</a></li>
 					        <li><a href="#" class="collapse__sublink" onclick="updateHeader('측정기기관리')">측정기기관리</a></li>
                         </ul>
                     </div>
@@ -176,42 +178,43 @@
         
     </div>
     
-     <script>
+   <script>
 
-        // 메뉴 클릭 시 헤더 업데이트
-        function updateHeader(menuName) {
-            document.getElementById('header-title').innerText = menuName;
+    // 메뉴 클릭 시 헤더 업데이트
+     function updateHeader(menuName) {
+        document.getElementById('header-title').innerText = menuName;
+    }
+    
+
+    function updateHeaderAndNavigate(event, url, menuName) {
+        event.preventDefault(); // 기본 링크 동작 방지
+        updateHeader(menuName); // 헤더 업데이트
+        window.location.href = url; // 페이지 이동
+    } 
+    // DOMContentLoaded 이벤트로 DOM이 준비된 후 스크립트 실행
+    document.addEventListener('DOMContentLoaded', function() {
+        const linkColor = document.querySelectorAll('.nav__link');
+
+        // 메뉴 클릭 시 활성화
+        function colorLink() {
+            linkColor.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
         }
+        linkColor.forEach(l => l.addEventListener('click', colorLink));
 
-        function updateHeaderAndNavigate(event, url, menuName) {
-            event.preventDefault(); // 기본 링크 동작 방지
-            updateHeader(menuName); // 헤더 업데이트
-            window.location.href = url; // 페이지 이동
+        const linkCollapse = document.getElementsByClassName('collapse__link');
+        let i;
+        for(i = 0; i < linkCollapse.length; i++) {
+            linkCollapse[i].addEventListener('click', function() {
+                const collapseMenu = this.nextElementSibling;
+                collapseMenu.classList.toggle('showCollapse');
+                const rotate = collapseMenu.previousElementSibling;
+                rotate.classList.toggle('rotate');
+            });
         }
+    });
+</script>
 
-        // DOMContentLoaded 이벤트로 DOM이 준비된 후 스크립트 실행
-        document.addEventListener('DOMContentLoaded', function() {
-            const linkColor = document.querySelectorAll('.nav__link');
-
-            // 메뉴 클릭 시 활성화
-            function colorLink() {
-                linkColor.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            }
-            linkColor.forEach(l => l.addEventListener('click', colorLink));
-
-            const linkCollapse = document.getElementsByClassName('collapse__link');
-            let i;
-            for(i = 0; i < linkCollapse.length; i++) {
-                linkCollapse[i].addEventListener('click', function() {
-                    const collapseMenu = this.nextElementSibling;
-                    collapseMenu.classList.toggle('showCollapse');
-                    const rotate = collapseMenu.previousElementSibling;
-                    rotate.classList.toggle('rotate');
-                });
-            }
-        });
-    </script>
     
 </body>
 </html>

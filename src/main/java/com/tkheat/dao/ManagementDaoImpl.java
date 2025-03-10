@@ -8,7 +8,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.tkheat.domain.Corp;
+import com.tkheat.domain.Fac;
 import com.tkheat.domain.Permission;
+import com.tkheat.domain.Product;
 import com.tkheat.domain.Users;
 @Repository
 public class ManagementDaoImpl implements ManagementDao {
@@ -39,6 +42,22 @@ public class ManagementDaoImpl implements ManagementDao {
 	public void authorityUserSelectSave(Permission permission) {
 		sqlSession.update("users.authorityUserSelectSave", permission);
 	}
-
+	
+	@Override
+	 public List<Corp> getCorpList() {
+		 return sqlSession.selectList("corp.getCorpList");
+	 }
+	
+	@Override
+	 public List<Fac> getFacList() {
+		 return sqlSession.selectList("fac.getFacList");
+	 }
+	
+	
+	
+	 @Override
+	    public void insertUser(Users users) {
+	        sqlSession.insert("users.insertUser", users); 
+	    }
 }
 

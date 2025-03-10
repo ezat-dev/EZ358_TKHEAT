@@ -7,33 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>거래처등록</title>
     <%@ include file="../include/sideBar.jsp" %>
+    <link rel="stylesheet" href="/tkheat/css/management/cutumInsert.css">
     
     
     <style>
-    .main {
-    margin-left: 225px;
-    margin-right:8px; 
-    margin-top : 70px;
-    width : 87.85%;
-    height: calc(100vh - 80px); 
-    background-color: #ffffff; 
-    padding: 1rem; 
-     /* border : 1px solid rgb(53, 53, 53);  */
-    border-radius: 0px 0px 6px 6px;
-	}
-	.tab {
-    margin-left: 117px;
-    margin-right:8px;
-    margin-top: 5px; 
-    height: 33px;
-    /* padding: 1rem; */
-    background-color: #ffffff; 
-     /* border : 1px solid rgb(53, 53, 53);   */
-    border-radius: 6px 6px 0px 0px;
-	}
-	
-	
-	
+    
 	.container {
 		display: flex;
 		justify-content: space-between;
@@ -73,12 +51,103 @@
     
     <body>
     
-    <div class="tab"></div>
+    <div class="tab">
+    <p class="tabP" style="font-size:20px; margin-left:40px; color : white; font-weight:800;">거래처등록</p>
+    <div class="button-container">
+        <button class="select-button">
+            <img src="/tkheat/css/image/search-icon.png" alt="select" class="button-image">
+           
+        </button>
+        <button class="insert-button">
+            <img src="/tkheat/css/image/insert-icon.png" alt="insert" class="button-image">
+          
+        </button>
+        <button class="excel-button">
+            <img src="/tkheat/css/image/excel-icon.png" alt="excel" class="button-image">
+            
+        </button>
+        <button class="printer-button">
+            <img src="/tkheat/css/image/printer-icon.png" alt="printer" class="button-image">
+            
+        </button>
+    </div>
+</div>
+    
+    
     <main class="main">
 		<div class="container">
 			<div id="tab1" class="tabulator"></div>
 		</div>
 	</main>
+	    
+	    
+	    
+	<div class="cutumModal">
+      <div class="cutum-main"></div>
+      <div class="cutum-header">거래처등록</div>
+      <div class="_1">거래처</div>
+      <div class="_2">사업자번호</div>
+      <div class="_3">전화번호</div>
+      <div class="_4">팩스번호</div>
+      <div class="_5">대표자</div>
+      <div class="_6">담당자</div>
+      <div class="_7">담당자 휴대폰</div>
+      <div class="_8">메일주소</div>
+      <div class="_9">업태</div>
+      <div class="_10">종목</div>
+      <div class="_11">주소</div>
+      <div class="_12">지역</div>
+      <div class="_13">거래게시일</div>
+      <div class="_14">기초잔액</div>
+      <div class="_15">마감일</div>
+      <div class="_16">구분</div>
+      <div class="_17">입금통장</div>
+      <div class="_18">비밀번호</div>
+      <div class="_19"></div>
+      <div class="_20">거래처명2</div>
+      <div class="_21">비고</div>
+      <div class="_22">영업담당자</div>
+      <input type="text" class="corp-name">
+	  <input type="text" class="corp-no">
+	  <input type="text" class="corp-tel">
+	  <input type="text" class="corp-fax">
+	  <input type="text" class="corp-boss">
+	  <input type="text" class="corp-mast">
+	  <input type="text" class="corp-hp">
+	  <input type="text" class="corp-mail">
+	  <input type="text" class="corp-upte">
+	  <input type="text" class="corp-upjo">
+	  <input type="text" class="corp-add">
+	  <input type="text" class="corp-plc">
+	  <input type="date" class="corp-strt">
+	  <input type="checkbox" class="corp-gyul-1">
+	  <input type="text" class="corp-jan">
+	  <input type="text" class="corp-gyul-2">
+	  <select class="corp-gubn">
+	    <option value="매입처">매입처</option>
+	    <option value="매출처">매출처</option>
+	  </select>
+	  <input type="text" class="corp-cno">
+	  <input type="text" class="corp-pwd">
+	  <input type="text" class="corp-name-2">
+	  <input type="text" class="corp-bigo">
+	  <input type="text" class="corp-business">
+	  <div class="save">저장</div>
+	  <div class="close">닫기</div>
+
+    </div>    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	    
 	    
 <script>
@@ -92,7 +161,6 @@
 	});
 
 	//이벤트
-	
 	//함수
 	function getCutumList(){
 		
@@ -107,7 +175,7 @@
 		    headerHozAlign:"center",
 		    ajaxConfig:"POST",
 		    ajaxLoader:false,
-		    ajaxURL:"/tkheat/management/cutumInsert/userList",
+		    ajaxURL:"/tkheat/management/authority/corpList",
 		    ajaxProgressiveLoad:"scroll",
 		    ajaxParams:{},
 		    placeholder:"조회된 데이터가 없습니다.",
@@ -119,16 +187,24 @@
 		    columns:[
 		        {title:"NO", field:"idx", sorter:"int", width:80,
 		        	hozAlign:"center"},
-		        {title:"아이디", field:"user_no", sorter:"string", width:100,
+		        {title:"구분ID", field:"corp_gubn", sorter:"string", width:120,
 		        	hozAlign:"center"},
-		        {title:"부서", field:"user_buso", sorter:"string", width:100,
+		        {title:"거래처명", field:"corp_name", sorter:"string", width:150,
 		        	hozAlign:"center"},
-		        {title:"직책", field:"user_jick", sorter:"string", width:100,
+		        {title:"영업담당자", field:"corp_name2", sorter:"string", width:100,
 		        	hozAlign:"center"},
-		        {title:"성명", field:"user_name", sorter:"string", width:100,
+		        {title:"사업자번호", field:"corp_no", sorter:"string", width:200,
 		        	hozAlign:"center"},
-		        {title:"유저코드", field:"user_code", sorter:"int", width:100,
-		        	hozAlign:"center", visible:false},
+		        {title:"전화", field:"corp_tel", sorter:"int", width:200,
+		        	hozAlign:"center"},
+		        {title:"FAX", field:"corp_fax", sorter:"int", width:200,
+			        hozAlign:"center"},
+			    {title:"대표", field:"corp_boss", sorter:"int", width:120,
+				    hozAlign:"center"},
+				{title:"담당자", field:"corp_mast", sorter:"int", width:150,
+					hozAlign:"center"},
+				{title:"지역", field:"corp_plc", sorter:"int", width:100,
+					hozAlign:"center"},      		
 		    ],
 		    rowFormatter:function(row){
 			    var data = row.getData();
@@ -150,59 +226,51 @@
 				});
 
 				var rowData = row.getData();
-//				console.log(rowData.user_code);
-				user_code = rowData.user_code;
-				$("#user_code").val(rowData.user_code);
-				$(".userName").text(rowData.user_name);
 				
-				getPermissionUserSelect();
 			},
 		});		
 	}
+
+
+
+
+
+	// 드래그 기능 추가
+	const modal = document.querySelector('.cutumModal');
+	const header = document.querySelector('.cutum-header'); // 헤더를 드래그할 요소로 사용
+
+	header.addEventListener('mousedown', function(e) {
+	    let offsetX = e.clientX - modal.getBoundingClientRect().left; // 마우스와 모달의 x 위치 차이
+	    let offsetY = e.clientY - modal.getBoundingClientRect().top; // 마우스와 모달의 y 위치 차이
+
+	    function moveModal(e) {
+	        modal.style.left = (e.clientX - offsetX) + 'px';
+	        modal.style.top = (e.clientY - offsetY) + 'px';
+	    }
+
+	    function stopMove() {
+	        window.removeEventListener('mousemove', moveModal); // 이동 중지
+	        window.removeEventListener('mouseup', stopMove); // 마우스 업 이벤트 제거
+	    }
+
+	    window.addEventListener('mousemove', moveModal); // 마우스 이동 이벤트
+	    window.addEventListener('mouseup', stopMove); // 마우스 업 이벤트
+	});
+		
+
+	// 모달 열기
+	const insertButton = document.querySelector('.insert-button');
+	const cutumModal = document.querySelector('.cutumModal');
+	const closeButton = document.querySelector('.close');
+
+	insertButton.addEventListener('click', function() {
+		cutumModal.style.display = 'block'; // 모달 표시
+	});
+
+	closeButton.addEventListener('click', function() {
+	    cutumModal.style.display = 'none'; // 모달 숨김
+	});
 	
-	function getPermissionUserSelect(){
-		
-		var userCode = $("#user_code").val();
-		
-		$.ajax({
-			url:"/tkheat/management/authority/userSelect",
-			type:"post",
-			dataType:"json",
-			data:{"user_code":userCode},
-			success:function(result){
-				
-				
-				var data = result.data;
-				for(let key in data){
-					console.log(key);
-					console.log(data[key]);
-					$("#"+key).val(data[key]);		
-				}
-			}
-		})
-	}
-	
-	function saveAut(){
-		var permissionData = new FormData($("#permissionForm")[0]);
-/*		
-		console.log(permissionData);
-		
-		return false;
-*/		
-		
-		$.ajax({
-			url:"/tkheat/management/authority/userSelectSave",
-			type:"post",
-			contentType: false,
-			processData: false,
-			dataType: "json",
-			data:permissionData,
-			success:function(result){
-				alert("권한이 수정되었습니다.");
-				getPermissionUserSelect();
-			}
-		});		
-	}
 
     </script>
 

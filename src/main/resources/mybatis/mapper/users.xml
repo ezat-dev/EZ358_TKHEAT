@@ -72,8 +72,41 @@
     
     <!-- 작업자등록 -->
     <insert id="insertUser" parameterType="users">
-    	INSERT INTO tb_user (user_id, user_pw, user_name, user_level, user_team, user_job)
-    	VALUES (#{user_id}, #{user_pw}, #{user_name}, #{user_level}, #{user_team}, #{user_job});
+    	INSERT 
+		  INTO USERT 
+		       (
+		           USER_CODE, 
+		           USER_NAME, 
+		           USER_NO, 
+		           USER_BUSO, 
+		           USER_JICK, 
+		           USER_JDATE, 
+		           USER_ODATE, 
+		           USER_ID, 
+		           USER_PWD, 
+		           USER_ADD, 
+		           USER_BIGO, 
+		           USER_RET,
+		           USER_PHONE
+		       ) 
+		       VALUES 
+		       (
+				  (SELECT ISNULL(MAX(USER_CODE), 0)+1
+					FROM USERT
+				  ),
+				  #{user_name},
+				  #{user_no},
+				  #{user_buso},
+				  #{user_jick},
+				  #{user_jdate},
+				  #{user_odate},
+				  #{user_id},
+				  #{user_pwd},
+				  #{user_add},
+				  #{user_bigo},
+				  #{user_ret},
+				  #{user_phone}
+		          )
 	</insert>
 
 	<!-- 선택한 사용자 권한조회 -->
