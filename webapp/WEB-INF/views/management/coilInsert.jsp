@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>거래처등록</title>
+    <title>코일등록</title>
     <%@ include file="../include/sideBar.jsp" %>
-    <link rel="stylesheet" href="/tkheat/css/management/cutumInsert.css">
+    <link rel="stylesheet" href="/tkheat/css/management/coilInsert.css">
     
     
     <style>
@@ -52,7 +52,7 @@
     <body>
     
     <div class="tab">
-    <p class="tabP" style="font-size:20px; margin-left:40px; color : white; font-weight:800;">거래처등록</p>
+    <p class="tabP" style="font-size:20px; margin-left:40px; color : white; font-weight:800;">코일등록</p>
     <div class="button-container">
         <button class="select-button">
             <img src="/tkheat/css/image/search-icon.png" alt="select" class="button-image">
@@ -80,6 +80,66 @@
 		</div>
 	</main>
 	    
+	    
+	    
+	    
+	 <div class="coilModal">
+      <div class="coil-main"></div>
+      <div class="coil-header">코일등록</div>
+      <div class="_1">코일입고일</div>
+      <div class="_2">구분</div>
+      <div class="_3">코일명</div>
+      <div class="_4">관리NO</div>
+      <div class="_5">수리타수</div>
+      <div class="_6">수리일자</div>
+      <div class="_7">점검자</div>
+      <div class="_8">폐기일자</div>
+      <div class="_9">폐기내역</div>
+      <div class="_10">주의사항</div>
+      <div class="_11">기초수발수</div>
+      <div class="_12">등급</div>
+      <div class="_13">수명타발수</div>
+      <div class="_14">수리이력</div>
+      <div class="_15">수리일자</div>
+      <div class="_16">수리사유</div>
+      <input type="date" class="coil-ipgo">
+      <select class="coil-gubn">
+	    <option value="수리">수리</option>
+	    <option value="폐기">폐기</option>
+	    <option value="양호">양호</option>
+	  </select>
+      <input type="text" class="coil-name">
+      <input type="text" class="coil-no">
+      <input type="text" class="coil-suritasu">
+      <input type="date" class="coil-suridate">
+      <input type="text" class="coil-chkman">
+      <input type="date" class="coil-dis-date">
+      <input type="text" class="coil-dislist">
+      <input type="text" class="coil-warn">
+      <input type="text" class="coil-gicho">
+      <select class="coil-level">
+	    <option value="A">A</option>
+	    <option value="B">B</option>
+	    <option value="C">C</option>
+	  </select>
+      <input type="text" class="coil-sumyung">
+      <input type="date" class="coil-recdate-1">>
+      <input type="text" class="coil-record-1">
+      <input type="date" class="coil-recdate-2">
+      <input type="text" class="coil-record-2">
+      <input type="date" class="coil-recdate-3">
+      <input type="text" class="coil-record-3">
+      <input type="date" class="coil-recdate-4">
+      <input type="text" class="coil-record-4">
+      <input type="date" class="coil-recdate-5">
+      <input type="text" class="coil-record-5">
+      <div class="save">저장</div>
+      <div class="close">닫기</div>
+    </div>
+    
+    
+    
+    
 	    
 <script>
 	//전역변수
@@ -161,7 +221,45 @@
 			},
 		});		
 	}
-	
+
+
+
+
+	// 드래그 기능 추가
+	const modal = document.querySelector('.coilModal');
+	const header = document.querySelector('.coil-header'); // 헤더를 드래그할 요소로 사용
+
+	header.addEventListener('mousedown', function(e) {
+	    let offsetX = e.clientX - modal.getBoundingClientRect().left; // 마우스와 모달의 x 위치 차이
+	    let offsetY = e.clientY - modal.getBoundingClientRect().top; // 마우스와 모달의 y 위치 차이
+
+	    function moveModal(e) {
+	        modal.style.left = (e.clientX - offsetX) + 'px';
+	        modal.style.top = (e.clientY - offsetY) + 'px';
+	    }
+
+	    function stopMove() {
+	        window.removeEventListener('mousemove', moveModal); // 이동 중지
+	        window.removeEventListener('mouseup', stopMove); // 마우스 업 이벤트 제거
+	    }
+
+	    window.addEventListener('mousemove', moveModal); // 마우스 이동 이벤트
+	    window.addEventListener('mouseup', stopMove); // 마우스 업 이벤트
+	});
+		
+
+	// 모달 열기
+	const insertButton = document.querySelector('.insert-button');
+	const coilModal = document.querySelector('.coilModal');
+	const closeButton = document.querySelector('.close');
+
+	insertButton.addEventListener('click', function() {
+		coilModal.style.display = 'block'; // 모달 표시
+	});
+
+	closeButton.addEventListener('click', function() {
+	    coilModal.style.display = 'none'; // 모달 숨김
+	});
 
     </script>
 

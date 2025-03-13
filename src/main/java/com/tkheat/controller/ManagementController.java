@@ -53,21 +53,33 @@ public class ManagementController {
 			 return "/management/facInsert.jsp";
 		 }	
 		 
-	//설비등록 화면 로드
+	//제품등록 화면 로드
 		 @RequestMapping(value = "/management/productInsert", method = RequestMethod.GET)
 		 public String productInsert(Users users) {
 			 
 			 return "/management/productInsert.jsp";
 		 }	 
 		 
-	//설비등록 화면 로드
+	//침탄로기준등록 화면 로드
 		 @RequestMapping(value = "/management/chimStandard", method = RequestMethod.GET)
 		 public String chimStandard(Users users) {
 			 
 			 return "/management/chimStandard.jsp";
 		 }		 
 		 
+	//코일등록 화면 로드
+		 @RequestMapping(value = "/management/coilInsert", method = RequestMethod.GET)
+		 public String coilInsert(Users users) {
+			 
+			 return "/management/coilInsert.jsp";
+		 }	
 		 
+	//코일등록 화면 로드
+		 @RequestMapping(value = "/management/plugInsert", method = RequestMethod.GET)
+		 public String plugInsert(Users users) {
+			 
+			 return "/management/plugInsert.jsp";
+		 }		 
 	 
 	 
 	 //전체 거래처목록 조회
