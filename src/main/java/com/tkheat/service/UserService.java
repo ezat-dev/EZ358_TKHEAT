@@ -2,6 +2,8 @@ package com.tkheat.service;
 
 import java.util.List;
 
+import com.tkheat.domain.Permission;
+import com.tkheat.domain.UserMenu;
 import com.tkheat.domain.Users;
 
 public interface UserService {
@@ -17,6 +19,12 @@ public interface UserService {
 	Users getLoginUser(Users users);
 
 	//메뉴를 선택했을 때 사용자가 선택한 메뉴를 이름, 링크로 분리해서 보여주는 메서드
-	public List<Users> menuList(Users users);	
+	public List<Users> menuList(Users users);
+
+	Permission userLoginPermission(Users loginUser);
+
+	void userLoginMenuSave(UserMenu userMenu);
+
+	List<UserMenu> userLoginMenuList(UserMenu userMenu);	
 	
 }

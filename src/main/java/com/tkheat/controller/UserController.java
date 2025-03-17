@@ -1,6 +1,8 @@
 package com.tkheat.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,13 +12,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.tkheat.domain.Permission;
+import com.tkheat.domain.UserMenu;
 import com.tkheat.domain.Users;
 import com.tkheat.service.UserService;
 
@@ -31,29 +34,97 @@ public class UserController {
 	/*사용자 로그인*/
 	@RequestMapping(value="/user/login", method=RequestMethod.POST)
 	@ResponseBody
-	public String login(@ModelAttribute Users users, HttpServletRequest request, HttpServletResponse response) {
+	public Map<String, Object> login(@ModelAttribute Users users, 
+			HttpServletRequest request, HttpServletResponse response,
+			HttpSession session) {
+		 
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+		
+		 if("".equals(users.getUser_id())){
+			 rtnMap.put("data","아이디를 입력해주십시오!");
+			 
+			 return rtnMap;
+		 }
+		 
+		 if("".equals(users.getUser_pwd())){
+			 rtnMap.put("data","비밀번호를 입력해주십시오!");
+			 
+			 return rtnMap;
+		 }
+		
 		//로그인을 클릭한 사용자의 아이디와 비밀번호가 같을 때
 		Users loginUser = userService.getLoginUser(users);
-		
-		String result = "";
-		/*
-		System.out.println(users);
-		System.out.println(users.getUser_id());
-		System.out.println(users.getUser_pw());
-		
-		  if(loginUser == null) { result = "fail"; return result; }else { //사용자가 로그인 했을
-		  때 Users menuCount = userService.userMenuSelectCount(users);
-		  
-		  if(menuCount == null) { //선택한 메뉴가 없는 사용자 result =
-		  "/tkheat/user/userMenuNoSelect"; }else { //선택한 메뉴가 있는 사용자 result =
-		  "/tkheat/user/usersMenuOkSelect"; } }
-		 */
+		 
+		 if(loginUser == null) {
+			 rtnMap.put("data","등록되지 않은 사용자입니다.");
+			 
+			 return rtnMap;			 
+		 }
+		 
+		 
+		 //로그인한 대상의 page정보 세션저장
+		 Permission loginPermission = userService.userLoginPermission(loginUser);
+		 session.setAttribute("loginUser",loginUser);
+		 session.setAttribute("loginUserPage",loginPermission);
+		 
+		 rtnMap.put("data", loginUser);
+		 rtnMap.put("loginUserPage", loginPermission);
 
-		request.getSession().setAttribute("user", loginUser);
 
-		return result;
+		return rtnMap;
 	}	
 	
+	 //로그인한 사용자의 메뉴셋팅
+	 @RequestMapping(value = "/user/login/menuSetting", method = RequestMethod.POST) 
+	 @ResponseBody 
+	 public Map<String, Object> userLoginMenuSetting(HttpSession session) {
+		 Map<String, Object> rtnMap = new HashMap<String, Object>();
+		 
+		 Permission pageData = (Permission)session.getAttribute("loginUserPage");
+		 
+		 rtnMap.put("data",pageData);
+		 
+		 return rtnMap;
+	 }
+	 
+	 //로그인한 사용자의 메뉴저장
+	 @RequestMapping(value = "/user/login/menuSave", method = RequestMethod.POST) 
+	 @ResponseBody 
+	 public Map<String, Object> userLoginMenuSave(
+			 @RequestParam int user_code,
+			 @RequestParam String menu_url,
+			 @RequestParam String menu_name) {
+		 Map<String, Object> rtnMap = new HashMap<String, Object>();
+		 
+		 UserMenu userMenu = new UserMenu();
+		 userMenu.setUser_code(user_code);
+		 userMenu.setMenu_url(menu_url);
+		 userMenu.setMenu_name(menu_name);
+		 
+		 userService.userLoginMenuSave(userMenu);
+		 
+		 rtnMap.put("data","OK");
+		 
+		 return rtnMap;
+	 }
+	 
+	 //로그인한 사용자의 메뉴저장
+	 @RequestMapping(value = "/user/login/menuList", method = RequestMethod.POST) 
+	 @ResponseBody 
+	 public Map<String, Object> userLoginMenuList(
+			 @RequestParam int user_code) {
+		 Map<String, Object> rtnMap = new HashMap<String, Object>();
+		 
+		 UserMenu userMenu = new UserMenu();
+		 userMenu.setUser_code(user_code);
+		 
+		 List<UserMenu> userMenuList = userService.userLoginMenuList(userMenu);
+		 
+		 rtnMap.put("data",userMenuList);
+		 
+		 return rtnMap;
+	 }
+	 
 	//로그아웃
 	@RequestMapping(value="/user/logout", method=RequestMethod.GET)
 	public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
@@ -64,77 +135,5 @@ public class UserController {
 		}
 		return "redirect:/";
 	}	
-	
-	/*메뉴를 클릭했을때 각 사용자가 선택한 메뉴 저장*/
-	@RequestMapping(value="/user/userMenuClick", method=RequestMethod.POST)
-	@ResponseBody
-	public String userMenuClick(HttpServletRequest request, HttpServletResponse response, 
-			HttpSession session, @RequestParam String menu, @RequestParam String link) {
-		String result = "N";
-		Users users = (Users)session.getAttribute("user");
-		StringBuffer desc = new StringBuffer();
-		
-//		users.setMenu_name(menu);
-//		users.setMenu_url(link);
-		
-		if(users != null) {
-			userService.userMenuClick(users);
-			
-			result = "Y";
-		}
-		
-		desc.append("userMenuClick = 아이디:"+users.getUser_id()+"// 이름:"+users.getUser_name()+"// 메뉴명:"+menu+"// URL:"+link);
-		logger.info("사용자 탭추가- {}",desc.toString());
-		
-		return result;
-	}
-	
-	/*메뉴를 선택한적이 없는 사용자를 이동시키는 메서드*/
-	@RequestMapping(value="/user/userMenuNoSelect", method = RequestMethod.GET)
-	public String userMenuNoSelect(Model model) {
-		
-		model.addAttribute("user", new Users());
-		
-		return "/include/noMenuUser.jsp";
-	}
-	
-	/*메뉴를 선택한적이 있는 사용자를 이동시키는 메서드*/
-	@RequestMapping(value="/user/usersMenuOkSelect", method = RequestMethod.GET)
-	public String usersMenuOkSelect(Model model, HttpSession session) {
-		Users users = (Users)session.getAttribute("user");
-		
-		model.addAttribute("user", new Users());
-		/*사용자가 이미 선택한 메뉴가 있다면 side메뉴바가 보이지 않도록*/
-		Users menuCount = userService.userMenuSelectCount(users);
-
-		
-		
-		session.setAttribute("menuCount", menuCount);
-		
-		List<Users> userMenu = userService.menuList(users);
-		
-		model.addAttribute("tabList",userMenu);
-		return "/include/sidebar.jsp";
-	}
-	
-	
-	
-	/*메뉴 닫기버튼을 클릭했을 때 해당 메뉴가 삭제가 되도록*/
-	@RequestMapping(value="/user/userMenuDelete", method=RequestMethod.POST)
-	@ResponseBody
-	public String userMenuDelete(HttpServletRequest request, HttpServletResponse response, 
-			HttpSession session, @RequestParam String name) {
-		String result = "N";
-		Users users = (Users)session.getAttribute("user");
-//		users.setMenu_name(name);
-		
-		if(users != null) {
-			userService.userMenuDelete(users);
-			
-			result = "Y";
-		}
-		
-		return result;
-	}
 }
 

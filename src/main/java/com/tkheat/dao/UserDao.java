@@ -2,6 +2,8 @@ package com.tkheat.dao;
 
 import java.util.List;
 
+import com.tkheat.domain.Permission;
+import com.tkheat.domain.UserMenu;
 import com.tkheat.domain.Users;
 
 public interface UserDao {
@@ -15,5 +17,11 @@ public interface UserDao {
 	void userMenuClick(Users users);
 
 	Users getLoginUser(Users users);
+
+	Permission userLoginPermission(Users loginUser);
+
+	void userLoginMenuSave(UserMenu userMenu);
+
+	List<UserMenu> userLoginMenuList(UserMenu userMenu);
 
 }

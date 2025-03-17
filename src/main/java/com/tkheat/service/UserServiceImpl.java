@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tkheat.dao.UserDao;
+import com.tkheat.domain.Permission;
+import com.tkheat.domain.UserMenu;
 import com.tkheat.domain.Users;
 
 @Service
@@ -63,6 +65,21 @@ public class UserServiceImpl implements UserService{
 		
 		
 		return menuList;
+	}
+
+	@Override
+	public Permission userLoginPermission(Users loginUser) {
+		return userDao.userLoginPermission(loginUser);
+	}
+
+	@Override
+	public void userLoginMenuSave(UserMenu userMenu) {
+		userDao.userLoginMenuSave(userMenu);
+	}
+
+	@Override
+	public List<UserMenu> userLoginMenuList(UserMenu userMenu) {
+		return userDao.userLoginMenuList(userMenu);
 	}
 
 }

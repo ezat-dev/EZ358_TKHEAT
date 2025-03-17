@@ -138,6 +138,11 @@ public class MainController {
 		}
     }	
     
+    @RequestMapping(value= "/tkHeat", method = RequestMethod.GET)
+    public String jinhapGeomet(Model model) {
+    	return "/include/sideBar.jsp";
+    }
+
     @RequestMapping(value= "/", method = RequestMethod.GET)
     public String main(Model model) {
         return "/login.jsp"; // 

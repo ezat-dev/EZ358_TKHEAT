@@ -1,91 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- 사이드바 템플릿 사용-->
-<script type="text/javascript" src="/tkheat/js/jquery.min.js"></script>
 
 <!-- 제이쿼리홈페이지 js -->
-<script type="text/javascript" src="/tkheat/js/jquery.js"></script>
-<script type="text/javascript" src="/tkheat/js/jquery-migrate-1.2.1.min.js"></script>
-
-<!-- popper 드롭다운-->
-<script src="/tkheat/js/popper.js"></script>
-
-<!-- 사이드바 템플릿 사용-->
-<script type="text/javascript" src="/tkheat/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/tkheat/css/bootstrap.min.css" />
-
-<!-- fontawesome 4.7.0 버전 -->
-<link rel="stylesheet" href="/tkheat/css/font-awesome.min.css" />
-
-<!-- selectinput 플러그인 -->
-<script type="text/javascript" src="/tkheat/js/chosen.js"></script>
-<link rel="stylesheet" href="/tkheat/css/chosen.css">
-
-<!-- jqgrid 플러그인 -->
-<script type="text/javascript" src="/tkheat/js/jqgrid/jquery.jqGrid.min.js"></script>
-<script type="text/javascript" src="/tkheat/js/jqgrid/grid.setcolumns.js"></script>
-<script type="text/javascript" src="/tkheat/js/jqgrid/grid.celledit.js"></script>
-<script type="text/javascript" src="/tkheat/js/jqgrid/grid.locale-kr.js"></script>
-
-
-<link rel="stylesheet" href="/tkheat/css/jqgrid/ui.jqgrid.css">
-
-<!-- 제이쿼리 ui -->
-<script type="text/javascript" src="/tkheat/js/jquery-ui.js"></script>
-<link rel="stylesheet" href="/tkheat/css/jquery-ui.css">
-<link rel="stylesheet" href="/tkheat/css/jquery-ui.theme.css">
-
-
-<!-- datepicker -->
-<script type="text/javascript" src="/tkheat/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="/tkheat/js/bootstrap-datepicker.ko.min.js"></script>
-<link rel="stylesheet" href="/tkheat/css/bootstrap-datepicker.css">
-
-
-<!-- krajee 파일업로드 -->
-<script type="text/javascript" src="/tkheat/js/file-krajee/piexif.js"></script>
-<script type="text/javascript" src="/tkheat/js/file-krajee/fileinput.js"></script>
-<script type="text/javascript" src="/tkheat/js/file-krajee/kr.js"></script>
-<script type="text/javascript" src="/tkheat/js/file-krajee/theme.js"></script>
-
-<link rel="stylesheet" href="/tkheat/css/file-krajee/fileinput.css">
-<link rel="stylesheet" href="/tkheat/css/file-krajee/fileinput-rtl.css">
-
-<!-- 빌보드차트 -->
-<script type="text/javascript" src="/tkheat/js/billboard/d3.min.js"></script>
-
-<link rel="stylesheet" href="/tkheat/css/billboard/graph.css?ver=2">
-<link rel="stylesheet" href="/tkheat/css/billboard/billboard.css?ver=2">
-<script type="text/javascript" src="/tkheat/js/billboard/billboard.js?ver=2"></script>
-
-
-<!-- 타임피커 -->
-<script type="text/javascript" src="/tkheat/js/timepicker/jquery.timepicker.min.js"></script>
-<link rel="stylesheet" href="/tkheat/css/timepicker/jquery.timepicker.css">
-
-
-<!-- dataTable -->
-<script type="text/javascript" src="/tkheat/js/datatables.min.js"></script>
-<link rel="stylesheet" href="/tkheat/css/datatables.min.css">
+<script type="text/javascript" src="/geomet/js/jquery-3.7.1.min.js"></script>
 
 <!-- Tabulator 테이블 -->
-<script type="text/javascript" src="/tkheat/js/tabulator/tabulator.js"></script>
-<link rel="stylesheet" href="/tkheat/css/tabulator/tabulator_simple.css">
+<script type="text/javascript" src="/geomet/js/tabulator/tabulator.js"></script>
+<link rel="stylesheet" href="/geomet/css/tabulator/tabulator_simple.css">
 
 <!-- moment -->
-<script type="text/javascript" src="/tkheat/js/moment/moment.min.js"></script>
+<script type="text/javascript" src="/geomet/js/moment/moment.min.js"></script>
 
 <!-- 화면캡쳐용 -->
-<script type="text/javascript" src="/tkheat/js/html2canvas.js"></script>
+<script type="text/javascript" src="/geomet/js/html2canvas.js"></script>
 
-<!-- 구글차트 -->
-<script type="text/javascript" src="/tkheat/js/google_chart/loader.js"></script>
 
 <!-- 하이차트 -->
-<script type="text/javascript" src="/tkheat/js/highchart/highcharts.js"></script>
-<script type="text/javascript" src="/tkheat/js/highchart/exporting.js"></script>
-<script type="text/javascript" src="/tkheat/js/highchart/export-data.js"></script>
-<script type="text/javascript" src="/tkheat/js/highchart/data.js"></script>
+<script type="text/javascript" src="/geomet/js/highchart/highcharts.js"></script>
+<script type="text/javascript" src="/geomet/js/highchart/exporting.js"></script>
+<script type="text/javascript" src="/geomet/js/highchart/export-data.js"></script>
+<script type="text/javascript" src="/geomet/js/highchart/data.js"></script>
+
+
+<!-- Air Datepicker -->
+<script type="text/javascript" src="/geomet/js/airdatepicker/datepicker.min.js"></script>
+<script type="text/javascript" src="/geomet/js/airdatepicker/datepicker.ko.js"></script>
+<link rel="stylesheet" href="/geomet/css/airdatepicker/datepicker.min.css"> 
 <style>
 	
 </style>
@@ -93,6 +33,35 @@
 
 $(function(){
 	rpImagePopup();
+	
+	//airDatePicker 설정
+	//날짜 : 일
+	 $(".daySet").datepicker({
+    	language: 'ko',
+    	autoClose: true,
+    }); 
+	    
+	//날짜 : 월
+   $(".monthSet").datepicker({
+	    language: 'ko',           // 한국어 설정
+	    view: 'months',           // 월만 표시
+	    minView: 'months',        // 월만 선택 가능
+	    dateFormat: 'yyyy-mm',    // 연도-월 형식 지정
+	    autoClose: true,          // 월 선택 후 자동 닫힘
+	});
+   
+
+    //날짜 : 년
+	 $(".yearSet").datepicker({
+	  language: 'ko',
+      view: 'years',          // 연도만 표시
+      minView: 'years',       // 연도만 표시하여 날짜 선택 비활성화
+      dateFormat: 'yyyy',     // 연도 형식 지정
+      autoClose: true,        // 연도 선택 후 자동 닫힘
+      language: 'ko'          // 한국어 설정
+  });
+	
+	
 });
 
 function rpImagePopup() {
@@ -134,6 +103,94 @@ function rpImagePopup() {
     .on("mouseout", ".rp-img-popup", function(){
         $(div).hide();
     });
+}
+function pageObject(paramKey){
+//	console.log("받은 키값 : "+paramKey);
+	var obj = {
+			"a01":"",
+			"a02":"",
+			"a03":"",
+			"a04":"",
+			"a05":"",
+			"a06":"",
+			"a07":"",
+			"a08":"",
+			"a09":"",
+			"a10":"",
+			"b01":"",
+			"b02":"",
+			"b03":"",
+			"b04":"",
+			"b05":"",
+			"c01":"",
+			"c02":"",
+			"c03":"",
+			"c04":"",
+			"c05":"",
+			"c06":"",
+			"c07":"",
+			"c08":"",
+			"c09":"",
+			"c10":"",
+			"c11":"",
+			"c12":"",
+			"d01":"",
+			"d02":"",
+			"d03":"",
+			"e01":"",
+			"e02":"",
+			"e03":"",
+			"e04":"",
+			"e05":"",
+			"e06":"",
+			"e07":"",
+			"e08":"",
+			"e09":"",
+			"f01":"",
+			"f02":"",
+			"f03":"",
+			"f04":"",
+			"f05":"",
+			"f06":"",
+			"f07":"",
+			"f08":"",
+			"f09":"",
+			"g01":"",
+			"g02":"",
+			"g03":"",
+			"g04":"",
+			"g05":"",
+			"g06":"",
+			"g07":"",
+			"g08":"",
+			"g09":"",
+			"g10":"",
+			"g11":"",
+			"g12":"",
+			"g13":"",
+			"g14":"",
+			"g15":"",
+			"g16":"",
+			"g17":"",
+			"g18":"",
+			"g19":"",
+			"h01":["/tkheat/management/productInsert","제품등록"],
+			"h02":["/tkheat/management/cutumInsert","거래처등록"],
+			"h03":["/tkheat/management/facInsert","설비등록"],
+			"h04":"",
+			"h05":["/tkheat/management/userinsert","작업자등록"],
+			"h06":"",
+			"h07":"",
+			"h08":["/tkheat/management/authority","사원별권한등록"],
+			"h09":"",
+			"h10":["/tkheat/management/coilInsert","코일등록"],
+			"h11":["/tkheat/management/plugInsert","PLUG등록"],
+			"h12":"",
+			"h13":"",
+	};
+
+	
+	return obj[paramKey];
 }
 
 </script>

@@ -6,17 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>거래처등록</title>
-    <%@ include file="../include/sideBar.jsp" %>
     <link rel="stylesheet" href="/tkheat/css/management/facInsert.css">
-    
-    
-    <style>
+    <link rel="stylesheet" href="/tkheat/css/tabBar/tabBar.css">
+	<%@include file="../include/pluginpage.jsp" %>    
+<style>
     
 	
 	.container {
 		display: flex;
 		justify-content: space-between;
-		padding: 20px;
 /*		margin-left:1008px;
 		margin-top:200px;*/
 	}
@@ -72,7 +70,7 @@
             
         </button>
     </div>
-</div>>
+</div>
     <main class="main">
 		<div class="container">
 			<div id="tab1" class="tabulator"></div>

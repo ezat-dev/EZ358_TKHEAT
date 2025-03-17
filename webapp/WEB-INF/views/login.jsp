@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/tkheat/css/login/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<%@include file="include/pluginpage.jsp" %>
   
   <style>
    a,
@@ -47,8 +47,10 @@
     <div class="pw-input"></div>
     <div class="text-1">이 사이트는 태경열처리 임직원 전용입니다.</div>
     <div class="text-2">주소 경남 함안군 군북면 함안산단 3 길 34</div>
-    <input type="text" id="n_id" name="n_id" placeholder="아이디를 입력하세요." />
-    <input type="password" id="n_pw" name="n_pw" placeholder="비밀번호를 입력하세요." />
+    <form id="userForm">
+	    <input type="text" id="n_id" name="user_id" placeholder="아이디를 입력하세요." />
+	    <input type="password" id="n_pw" name="user_pwd" placeholder="비밀번호를 입력하세요." />
+    </form>
     <button class="login_btn" onclick="login();">로그인</button>
     <div class="text-5">아이디</div>
     <div class="text-6">패스워드</div>
@@ -64,22 +66,18 @@
   <script>
 
   function login(){
-	    var id = $("#n_id").val();
-	    var pw = $("#n_pw").val(); 
-
-	    $.ajax({
-	        url: "/tkheat/user/login",
-	        type: "post",
-	        data: {user_id: id, user_pw: pw}, 
-	        success: function(result) {
-	            if(result == "fail") {
-	                modal_alert(); 
-	            } else {
-	                location.href = "/tkheat/management/userinsert"
-	            }
-	        }
-	    });
-	    
+		var userData = new FormData($("#userForm")[0]);
+		$.ajax({
+			url:"/tkheat/user/login",
+			type:"post",
+			contentType: false,
+			processData: false,
+			dataType: "json",
+			data:userData,
+			success:function(result){				
+				location.href = "/tkheat/tkHeat";
+			}
+		});
 	}
 
 
