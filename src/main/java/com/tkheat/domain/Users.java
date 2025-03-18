@@ -23,6 +23,7 @@ public class Users {
 	private String user_suri;
 	private String user_coilchk;
 	private String user_plugchk;
+	private String user_ip;
 	
 	
 	public int getUser_code() {
@@ -145,6 +146,10 @@ public class Users {
 	public void setUser_plugchk(String user_plugchk) {
 		this.user_plugchk = user_plugchk;
 	}
-	
-	
+	public String getUser_ip() {
+		return user_ip;
+	}
+	public void setUser_ip(String user_ip) {
+		this.user_ip = user_ip;
+	}
 }

@@ -50,6 +50,7 @@
     <form id="userForm">
 	    <input type="text" id="n_id" name="user_id" placeholder="아이디를 입력하세요." />
 	    <input type="password" id="n_pw" name="user_pwd" placeholder="비밀번호를 입력하세요." />
+	    <input type="hidden" id="n_ip" name="user_ip" placeholder="비밀번호를 입력하세요." />
     </form>
     <button class="login_btn" onclick="login();">로그인</button>
     <div class="text-5">아이디</div>
@@ -65,6 +66,17 @@
   
   <script>
 
+	$(function(){
+		$.ajax({
+			url:"https://api.ip.pe.kr/json" 
+		}).done(function(val){
+			console.log(val);
+			console.log(val.ip);
+			console.log(val.contry_code);
+			$("#n_ip").val(val.ip);
+		});
+	});
+  
   function login(){
 		var userData = new FormData($("#userForm")[0]);
 		$.ajax({

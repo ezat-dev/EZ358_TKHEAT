@@ -24,4 +24,8 @@ public interface UserDao {
 
 	List<UserMenu> userLoginMenuList(UserMenu userMenu);
 
+	void userLoginMenuRemove(UserMenu userMenu);
+
+	void userLoginHisSave(Users users);
+
 }

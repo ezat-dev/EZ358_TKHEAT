@@ -61,6 +61,9 @@ public class UserController {
 			 return rtnMap;			 
 		 }
 		 
+		 loginUser.setUser_ip(users.getUser_ip());
+		 
+		 userService.userLoginHisSave(loginUser);
 		 
 		 //로그인한 대상의 page정보 세션저장
 		 Permission loginPermission = userService.userLoginPermission(loginUser);
@@ -121,6 +124,25 @@ public class UserController {
 		 List<UserMenu> userMenuList = userService.userLoginMenuList(userMenu);
 		 
 		 rtnMap.put("data",userMenuList);
+		 
+		 return rtnMap;
+	 }
+	 
+	 //로그인한 사용자의 메뉴저장
+	 @RequestMapping(value = "/user/login/menuRemove", method = RequestMethod.POST) 
+	 @ResponseBody 
+	 public Map<String, Object> userLoginMenuRemove(
+			 @RequestParam int user_code,
+			 @RequestParam String menu_url) {
+		 Map<String, Object> rtnMap = new HashMap<String, Object>();
+		 
+		 UserMenu userMenu = new UserMenu();
+		 userMenu.setUser_code(user_code);
+		 userMenu.setMenu_url(menu_url);
+		 
+		 userService.userLoginMenuRemove(userMenu);
+		 
+		 rtnMap.put("data","OK");
 		 
 		 return rtnMap;
 	 }

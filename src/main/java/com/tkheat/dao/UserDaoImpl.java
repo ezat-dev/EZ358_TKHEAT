@@ -76,4 +76,14 @@ public class UserDaoImpl implements UserDao{
 		}
 	}
 
+	@Override
+	public void userLoginMenuRemove(UserMenu userMenu) {
+		sqlSession.update("users.userLoginMenuRemove",userMenu);
+	}
+
+	@Override
+	public void userLoginHisSave(Users users) {
+		sqlSession.insert("users.userLoginHisSave",users);
+	}
+
 }

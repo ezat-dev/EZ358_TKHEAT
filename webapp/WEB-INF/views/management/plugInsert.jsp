@@ -6,16 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>코일등록</title>
-    <%@ include file="../include/sideBar.jsp" %>
     <link rel="stylesheet" href="/tkheat/css/management/plugInsert.css">
-    
+    <link rel="stylesheet" href="/tkheat/css/tabBar/tabBar.css">
+<%@include file="../include/pluginpage.jsp" %>     
     
     <style>
     
 	.container {
 		display: flex;
 		justify-content: space-between;
-		padding: 20px;
 /*		margin-left:1008px;
 		margin-top:200px;*/
 	}
@@ -52,7 +51,6 @@
     <body>
     
     <div class="tab">
-    <p class="tabP" style="font-size:20px; margin-left:40px; color : white; font-weight:800;">PLUG등록</p>
     <div class="button-container">
         <button class="select-button">
             <img src="/tkheat/css/image/search-icon.png" alt="select" class="button-image">
@@ -164,11 +162,11 @@
 		    selectableRows:true,
 		    reactiveData:true,
 		    headerHozAlign:"center",
-		    ajaxConfig:"POST",
+/*		    ajaxConfig:"POST",
 		    ajaxLoader:false,
 		    ajaxURL:"/tkheat/management/authority/corpList",
 		    ajaxProgressiveLoad:"scroll",
-		    ajaxParams:{},
+		    ajaxParams:{},*/
 		    placeholder:"조회된 데이터가 없습니다.",
 		    paginationSize:20,
 		    ajaxResponse:function(url, params, response){

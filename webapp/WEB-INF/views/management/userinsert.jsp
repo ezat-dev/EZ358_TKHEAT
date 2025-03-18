@@ -7,18 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>권한 설정</title>
     <%-- <%@ include file="../include/sideBar.jsp" %> --%>
-    <link rel="stylesheet" href="/tkheat/css/management/userinsert.css">
     <link rel="stylesheet" href="/tkheat/css/tabBar/tabBar.css">
     <%@include file="../include/pluginpage.jsp" %>
-    
+    <link rel="stylesheet" href="/tkheat/css/management/userinsert2.css">
     <style>
+
     
 	.container {
             display: flex;
             justify-content: space-between;
-            padding: 20px;
             margin-left:5px;
-            margin-top:30px;
         }
 
         #tab1, #tab2, #tab3, #tab4 {
@@ -53,7 +51,6 @@
     <body>
     
     <div class="tab">
-    <p class="tabP" style="font-size:20px; margin-left:40px; color : white; font-weight:800">작업자등록</p>
     <div class="button-container">
         <button class="select-button">
             <img src="/tkheat/css/image/search-icon.png" alt="select" class="button-image">
@@ -268,7 +265,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/tkheat/management/authority/userinsert",
+        url: "/tkheat/management/userinsert/save",
         contentType: "application/json",
         data: JSON.stringify(userData),
         success: function(response) {

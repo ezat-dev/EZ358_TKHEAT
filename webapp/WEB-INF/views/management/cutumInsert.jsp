@@ -171,7 +171,7 @@
 		    headerHozAlign:"center",
 		    ajaxConfig:"POST",
 		    ajaxLoader:false,
-		    ajaxURL:"/tkheat/management/authority/corpList",
+		    ajaxURL:"/tkheat/management/cutumInsert/list",
 		    ajaxProgressiveLoad:"scroll",
 		    ajaxParams:{},
 		    placeholder:"조회된 데이터가 없습니다.",

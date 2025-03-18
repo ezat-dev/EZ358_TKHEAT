@@ -213,5 +213,22 @@
 		AND menu_yn = 'Y'
 		ORDER BY insert_date DESC
 	</select>	
+	
+	
+	<update id="userLoginMenuRemove" parameterType="userMenu">
+		UPDATE tb_usermenu SET menu_yn = 'N'
+		WHERE 1=1
+		AND user_code = #{user_code}
+		AND menu_url = #{menu_url}
+	</update>
+	
+	<insert id="userLoginHisSave" parameterType="users">
+		INSERT INTO LOGINHIS VALUES (
+			(SELECT ISNULL(MAX(LOGIN_CODE), 0)+1
+					FROM LOGINHIS
+				  ),#{user_code}, #{user_ip}
+		)
+		
+	</insert>
 
 </mapper>

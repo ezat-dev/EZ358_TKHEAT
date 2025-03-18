@@ -82,4 +82,14 @@ public class UserServiceImpl implements UserService{
 		return userDao.userLoginMenuList(userMenu);
 	}
 
+	@Override
+	public void userLoginMenuRemove(UserMenu userMenu) {
+		userDao.userLoginMenuRemove(userMenu);
+	}
+
+	@Override
+	public void userLoginHisSave(Users users) {
+		userDao.userLoginHisSave(users);
+	}
+
 }

@@ -25,6 +25,10 @@ public interface UserService {
 
 	void userLoginMenuSave(UserMenu userMenu);
 
-	List<UserMenu> userLoginMenuList(UserMenu userMenu);	
+	List<UserMenu> userLoginMenuList(UserMenu userMenu);
+
+	void userLoginMenuRemove(UserMenu userMenu);
+
+	void userLoginHisSave(Users users);	
 	
 }

@@ -6,16 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>거래처등록</title>
-    <%@ include file="../include/sideBar.jsp" %>
     <link rel="stylesheet" href="/tkheat/css/management/cutumInsert.css">
-    
+    <link rel="stylesheet" href="/tkheat/css/tabBar/tabBar.css">
+<%@include file="../include/pluginpage.jsp" %>     
     
     <style>
     
 	.container {
 		display: flex;
 		justify-content: space-between;
-		padding: 20px;
 /*		margin-left:1008px;
 		margin-top:200px;*/
 	}
@@ -52,7 +51,6 @@
     <body>
     
     <div class="tab">
-    <p class="tabP" style="font-size:20px; margin-left:40px; color : white; font-weight:800;" >침탄로작업표준</p>
     <div class="button-container">
         <button class="select-button">
             <img src="/tkheat/css/image/search-icon.png" alt="select" class="button-image">
@@ -94,7 +92,6 @@
 	//이벤트
 	//함수
 	function getCutumList(){
-		
 		userTable = new Tabulator("#tab1", {
 		    height:"750px",
 		    layout:"fitColumns",
@@ -104,12 +101,12 @@
 		    selectableRows:true,
 		    reactiveData:true,
 		    headerHozAlign:"center",
-		    ajaxConfig:"POST",
+/*		    ajaxConfig:"POST",
 		    ajaxLoader:false,
 		    ajaxURL:"/tkheat/management/authority/corpList",
 		    ajaxProgressiveLoad:"scroll",
 		    ajaxParams:{},
-		    placeholder:"조회된 데이터가 없습니다.",
+		    */placeholder:"조회된 데이터가 없습니다.",
 		    paginationSize:20,
 		    ajaxResponse:function(url, params, response){
 				$("#tab1 .tabulator-col.tabulator-sortable").css("height","29px");

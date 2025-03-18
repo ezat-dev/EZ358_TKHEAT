@@ -64,7 +64,9 @@
        gap: 6px;
        min-width: 100px;  
        height: 43px;
+       cursor:pointer;
    }
+   
    
    .menuDivTab:hover {
        background: #f0f2f5;
@@ -136,6 +138,30 @@
     align-items: center;
     justify-content: space-between;
 }
+
+   .menuDivTab .close-btn {
+       font-size: 19px; 
+       background: none;
+       border: none;
+       color: #888; 
+       cursor: pointer;
+       padding: 0;
+       margin-left: 10px;
+       display: flex;
+       align-items: center; 
+       justify-content: center;
+       transition: color 0.2s ease-in-out;
+   }
+
+   
+   .menuDivTab .close-btn:hover {
+       color: #ff3b30; 
+   }
+
+	.menuName{
+		cursor:pointer;
+	}   
+
 </style>
 
 <body>
@@ -454,7 +480,10 @@
 					var menuNameIndex = (data[key].menu_name).indexOf("-")+1;
 					menuName = menuName.substring(menuNameIndex,menuName.length);
 
-					_div = "<label class='menuDivTab' onClick=iframeSrc('"+data[key].menu_url+"','"+data[key].menu_name+"')>"+menuName+"</label>"
+	                   _div = "<div class='menuDivTab'>";
+	                   _div += "<label class='menuName' onClick=iframeSrc('"+data[key].menu_url+"','"+menuName+"')>" + menuName + "</label>";
+	                   _div += "<button class='close-btn' onClick=removeMenu('"+data[key].menu_url+"')>×</button>";
+	                   _div += "</div>";
 					
 					
 					if(idx == 0){
@@ -467,6 +496,30 @@
 			}
 		});
 	}
+	
+	   function removeMenu(url) {
+			var loginCode = "${loginUser.user_code}";		   
+		   
+		   $.ajax({
+			  url:"/tkheat/user/login/menuRemove",
+			  type:"post",
+			  dataType:"json",
+			  data:{
+				  "user_code":loginCode,
+				  "menu_url":url},
+			  success:function(result){
+				  menuList();
+			  }
+		   });
+/*		   
+		   console.log(button);
+		   
+	       var menuName = $(button).siblings('.menuName').text(); 
+	       console.log(menuName + " 메뉴 엑스 .");
+	    
+	       $(button).parent().remove();
+*/	       
+	   }	
 
         // DOMContentLoaded 이벤트로 DOM이 준비된 후 스크립트 실행
         document.addEventListener('DOMContentLoaded', function() {
