@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>권한 설정</title>
-    <%@ include file="../include/sideBar.jsp" %>
+    <%-- <%@ include file="../include/sideBar.jsp" %> --%>
     <link rel="stylesheet" href="/tkheat/css/management/userinsert.css">
+    <link rel="stylesheet" href="/tkheat/css/tabBar/tabBar.css">
+    <%@include file="../include/pluginpage.jsp" %>
     
     <style>
     

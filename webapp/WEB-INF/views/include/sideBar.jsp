@@ -7,7 +7,6 @@
   <meta name="author" content="태경열처리">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/tkheat/css/login/style.css">
-  <link rel="stylesheet" href="/tkheat/css/tabBar/tabBar.css">
 
 	<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   <link rel="stylesheet" href="/tkheat/css/sideBar/styles.css">
@@ -24,48 +23,113 @@
 }
 
 
-.menuDivTab{
-/*    width: 150px;*/
-	text-align: center;
-    cursor: pointer;
-    margin-right: 10px;
-    background-color: white;
-    border-radius: 6px 6px 0px 0px;
-    margin-top: 8px;
-    padding-top: 5px;
-    border: 1px solid black;
-}
+   .menuDiv {
+       display: flex;
+       align-items: center;
+       width: 92.7%;
+       height: 50px;
+       
+       margin-left: 131px;
+       padding: 8px 14px;
+       border-radius: 14px;
+       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+       overflow-x: auto;
+       white-space: nowrap;
+       gap: 8px;  /* 탭 간격 좁히기 */
+       scrollbar-width: none;
+       -ms-overflow-style: none;
+   }
+   
+   .menuDiv::-webkit-scrollbar {
+       display: none;
+   }
+   
+   
+   .menuDivTab {
+       text-align: center;
+       cursor: pointer;
+       background: white;
+       border-radius: 10px;
+       padding: 12px 18px;
+       font-size: 14px;
+       font-weight: 700;
+       color: #333;
+       border: 1px solid #ddd;
+       transition: all 0.3s ease-in-out;
+       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+       user-select: none;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 6px;
+       min-width: 100px;  
+       height: 43px;
+   }
+   
+   .menuDivTab:hover {
+       background: #f0f2f5;
+       transform: translateY(-2px);
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+   }
+   
+   .menuDivTab.active {
+       background: #007aff;
+       color: white;
+       border: 1px solid #0062cc;
+       box-shadow: 0 3px 8px rgba(0, 122, 255, 0.3);
+       transform: translateY(-2px);
+   }
+   
+   
+   .menuDivTab i {
+       font-size: 16px;
+       color: inherit;
+   }
+   
+   
+   .menuDivTab .close-btn {
+       font-size: 19px; 
+       background: none;
+       border: none;
+       color: #888; 
+       cursor: pointer;
+       padding: 0;
+       margin-left: 10px;
+       display: flex;
+       align-items: center; 
+       justify-content: center;
+       transition: color 0.2s ease-in-out;
+   }
 
-.menuDiv{
-	display: flex;
-	width:92.7%;
-	height:40px;
-	background-color:lightgray;
-    margin-left: 131px;
-}
+   
+   .menuDivTab .close-btn:hover {
+       color: #ff3b30; 
+   }
+   
+   
+   .frameDiv {
+       display: flex;
+       width: 92.7%;
+       height: 90%;
+       background: white;
+       margin-left: 131px;
+       border-radius: 14px;
+       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+       overflow: hidden;
+   }
+   
+   .frameDiv #pageFrame {
+       width: 100%;
+       height: 100%;
+       border: none;
+   }
 
-.frameDiv{
-	display: flex;
-	width:92.7%;
-	height:90%;	
-	background-color:white;
-    margin-left: 131px;
-}
-
-.frameDiv #pageFrame{
-	width:100%;
-	height:100%;
-}
-
-.menuTab{
-	
-}
 
 .header{
     margin-left: 131px;
     /* margin-right: 8px; */
     margin-top: 5px;
-    height: 53px;
+    height: 30px;
     background-color: #33363d;
     border-radius: 6px 6px 0px 0px;
     display: flex;
