@@ -11,6 +11,7 @@
 <%@include file="../include/pluginpage.jsp" %> 
     <style>
     
+    
 .main{
 	width:98%;
 }
