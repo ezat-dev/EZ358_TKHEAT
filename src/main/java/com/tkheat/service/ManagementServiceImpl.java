@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 import com.tkheat.dao.ManagementDao;
 import com.tkheat.domain.Corp;
 import com.tkheat.domain.Fac;
+import com.tkheat.domain.Measure;
 import com.tkheat.domain.Permission;
 import com.tkheat.domain.Product;
+import com.tkheat.domain.Standard;
 import com.tkheat.domain.Users;
 
 @Service
@@ -41,6 +43,11 @@ public class ManagementServiceImpl implements ManagementService {
 	}
 	
 	@Override
+	public void productInsertSave(Product product) {
+		managementDao.productInsertSave(product);
+	}
+	
+	@Override
 	public List<Corp> getCorpList(){
 		return managementDao.getCorpList();
 	}
@@ -50,7 +57,25 @@ public class ManagementServiceImpl implements ManagementService {
 		return managementDao.getFacList();
 	}
 	
+	@Override
+	public List<Product> getProductList(){
+		return managementDao.getProductList();
+	}
 	
+	@Override
+	public List<Measure> getMeasureList(){
+		return managementDao.getMeasureList();
+	}
+	
+	@Override
+	public List<Standard> getChimStandardList(){
+		return managementDao.getChimStandardList();
+	}
+	
+	@Override
+	public List<Standard> getGoStandardList(){
+		return managementDao.getGoStandardList();
+	}
 	
 	@Override
     public void insertUser(Users users) {

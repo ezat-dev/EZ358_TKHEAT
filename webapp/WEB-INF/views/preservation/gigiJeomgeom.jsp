@@ -18,23 +18,9 @@
 	display: flex;
 	justify-content: space-between;
 }
-.tabulator {
-	width: 100%;
-	max-width: 100%;
-	max-height: 900px;
-	overflow-x: hidden !important;  
-}
-        
-.tabulator .tabulator-cell {
-	white-space: normal !important;
-	word-break: break-word; 
-	text-align: center;
-}
-        
-.row_select{
-	background-color:#9ABCEA !important;
-}
-    
+
+
+
     
     </style>
     

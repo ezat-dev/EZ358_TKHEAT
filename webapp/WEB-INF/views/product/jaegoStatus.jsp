@@ -76,12 +76,12 @@
 	//로드
 	$(function(){
 		//전체 거래처목록 조회
-		getCutumList();
+		getJaegoStatusList();
 	});
 
 	//이벤트
 	//함수
-	function getCutumList(){
+	function getJaegoStatusList(){
 		
 		userTable = new Tabulator("#tab1", {
 		    height:"750px",
@@ -91,12 +91,12 @@
 		    selectableRangeMode:"click",
 		    reactiveData:true,
 		    headerHozAlign:"center",
-		    /*		    ajaxConfig:"POST",
+		    ajaxConfig:"POST",
 		    ajaxLoader:false,
-		    ajaxURL:"/tkheat/management/authority/productList",
+		    ajaxURL:"/tkheat/product/jaegoStatus/getJaegoStatusList",
 		    ajaxProgressiveLoad:"scroll",
 		    ajaxParams:{},
-*/		    placeholder:"조회된 데이터가 없습니다.",
+     	    placeholder:"조회된 데이터가 없습니다.",
 		    paginationSize:20,
 		    ajaxResponse:function(url, params, response){
 				$("#tab1 .tabulator-col.tabulator-sortable").css("height","29px");
@@ -105,9 +105,9 @@
 		    columns:[
 		        {title:"NO", field:"idx", sorter:"int", width:80,
 		        	hozAlign:"center"},
-		        {title:"수주NO", field:"prod_code", sorter:"string", width:120,
+		        {title:"수주NO", field:"ord_code", sorter:"string", width:120,
 			        hozAlign:"center"},	
-			    {title:"입고일", field:"prod_date", sorter:"string", width:120,
+			    {title:"입고일", field:"ord_date", sorter:"string", width:120,
 				    hozAlign:"center"},     
 				{title:"거래처", field:"corp_name", sorter:"string", width:120,
 				    hozAlign:"center"}, 
@@ -115,25 +115,35 @@
 				    hozAlign:"center"}, 
 		        {title:"품번", field:"prod_no", sorter:"string", width:120,
 		        	hozAlign:"center"},		        
-		        {title:"재질", field:"prod_gyu", sorter:"string", width:100,
+		        {title:"재질", field:"prod_jai", sorter:"string", width:100,
 		        	hozAlign:"center"},
-		        {title:"규격", field:"prod_jai", sorter:"string", width:100,
+		        {title:"규격", field:"prod_gyu", sorter:"string", width:100,
 		        	hozAlign:"center"},
 		        {title:"공정", field:"tech_te", sorter:"string", width:100,
 			        hozAlign:"center"},	
-		        {title:"단가", field:"prod_danj", sorter:"int", width:100,
+		        {title:"입고/타각LOT", field:"ord_lot", sorter:"int", width:100,
 		        	hozAlign:"center"},  	
-		        {title:"단중", field:"prod_danw", sorter:"int", width:100,
+		        {title:"단가", field:"ord_dang", sorter:"int", width:100,
 			        hozAlign:"center"},	
-			    {title:"입고수", field:"prod_danw", sorter:"int", width:100,
+			    {title:"단중", field:"ord_danj", sorter:"int", width:100,
 				    hozAlign:"center"},	
-				{title:"입고중량", field:"prod_danw", sorter:"int", width:100,
+				{title:"입고수", field:"ord_su", sorter:"int", width:100,
 				    hozAlign:"center"},
-				{title:"재고수", field:"prod_danw", sorter:"int", width:100,
+				{title:"입고중량", field:"ord_amnt", sorter:"int", width:100,
 					hozAlign:"center"},
-			    {title:"재고중량", field:"prod_danw", sorter:"int", width:100,
+			    {title:"재고수", field:"jaigo_su", sorter:"int", width:100,
 					hozAlign:"center"},
- 			    {title:"입고비교", field:"prod_danw", sorter:"int", width:100,
+ 			    {title:"재고중량", field:"jaigo_amnt", sorter:"int", width:100,
+					hozAlign:"center"},
+				{title:"입고비고", field:"ord_bigo", sorter:"int", width:100,
+					hozAlign:"center"},
+				{title:"입고담당자", field:"ord_name", sorter:"int", width:100,
+					hozAlign:"center"},
+				{title:"단위", field:"ord_danw", sorter:"int", width:100,
+					hozAlign:"center"},
+				{title:"금액", field:"och_mon", sorter:"int", width:100,
+					hozAlign:"center"},
+				{title:"출고비고", field:"och_bigo", sorter:"int", width:100,
 					hozAlign:"center"},
 				    
 		    ],

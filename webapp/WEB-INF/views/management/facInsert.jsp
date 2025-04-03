@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>거래처등록</title>
+    <title>설비등록</title>
     <link rel="stylesheet" href="/tkheat/css/management/facInsert.css">
     <link rel="stylesheet" href="/tkheat/css/tabBar/tabBar.css">
 	<%@include file="../include/pluginpage.jsp" %>    
@@ -165,12 +165,12 @@
 	//로드
 	$(function(){
 		//전체 거래처목록 조회
-		getCutumList();
+		getFacList();
 	});
 
 	//이벤트
 	//함수
-	function getCutumList(){
+	function getFacList(){
 		
 		userTable = new Tabulator("#tab1", {
 		    height:"750px",
@@ -181,11 +181,11 @@
 		    selectableRows:true,
 		    reactiveData:true,
 		    headerHozAlign:"center",
-/*		    ajaxConfig:"POST",
+		    ajaxConfig:"POST",
 		    ajaxLoader:false,
-		    ajaxURL:"/tkheat/management/facInsert/list",
+		    ajaxURL:"/tkheat/management/facInsert/getFacList",
 		    ajaxProgressiveLoad:"scroll",
-		    ajaxParams:{},*/
+		    ajaxParams:{},
 		    placeholder:"조회된 데이터가 없습니다.",
 		    paginationSize:20,
 		    ajaxResponse:function(url, params, response){

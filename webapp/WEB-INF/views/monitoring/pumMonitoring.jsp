@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>거래처등록</title>
-    <link rel="stylesheet" href="/tkheat/css/management/productInsert.css">
+    <title>통합모니터링</title>
+    <link rel="stylesheet" href="/tkheat/css/monitoring/monitoring.css">
     <link rel="stylesheet" href="/tkheat/css/tabBar/tabBar.css">
 <%@include file="../include/pluginpage.jsp" %> 
     <style>
@@ -17,22 +17,6 @@
 .container {
 	display: flex;
 	justify-content: space-between;
-}
-.tabulator {
-	width: 100%;
-	max-width: 100%;
-	max-height: 900px;
-	overflow-x: hidden !important;  
-}
-        
-.tabulator .tabulator-cell {
-	white-space: normal !important;
-	word-break: break-word; 
-	text-align: center;
-}
-        
-.row_select{
-	background-color:#9ABCEA !important;
 }
     
     
@@ -63,8 +47,85 @@
     </div>
 </div>
     <main class="main">
+        <div class="rectangle-2"></div>
+	    <div class="rectangle-12"></div>
+	    <div class="rectangle-3"></div>
+	    <div class="rectangle-4"></div>
+	    <div class="rectangle-6"></div>
+	    <div class="rectangle-7"></div>
+	    <div class="chim-1-heat"></div>
+	    <div class="chim-1-bon"></div>
+	    <div class="rectangle-35"></div>
+	    <div class="rectangle-36"></div>
+	    <div class="rectangle-37"></div>
+	    <div class="chim-2-heat"></div>
+	    <div class="chim-2-bon"></div>
+	    <div class="rectangle-40"></div>
+	    <div class="rectangle-41"></div>
+	    <div class="rectangle-42"></div>
+	    <div class="chim-3-heat"></div>
+	    <div class="chim-3-bon"></div>
+	    <div class="rectangle-45"></div>
+	    <div class="rectangle-46"></div>
+	    <div class="rectangle-47"></div>
+	    <div class="chim-4-heat"></div>
+	    <div class="chim-4-bon"></div>
+	    <div class="rectangle-50"></div>
+	    <div class="rectangle-51"></div>
+	    <div class="rectangle-52"></div>
+	    <div class="chim-5-heat"></div>
+	    <div class="chim-5-bon"></div>
+	    <div class="rectangle-55"></div>
+	    <div class="rectangle-56"></div>
+	    <div class="rectangle-57"></div>
+	    <div class="rectangle-59"></div>
+	    <div class="rectangle-8"></div>
+	    <div class="rectangle-9"></div>
+	    <div class="rectangle-10"></div>
+	    <div class="rectangle-11"></div>
+	    <div class="rectangle-13"></div>
+	    <div class="rectangle-14"></div>
+	    <div class="rectangle-15"></div>
+	    <div class="rectangle-16"></div>
+	    <div class="rectangle-17"></div>
+	    <div class="rectangle-58"></div>
+	    <div class="chim-1-cutum"></div>
+	    <div class="chim-1-pum"></div>
+	    <div class="chim-1-lot"></div>
+	    <div class="chim-2-cutum"></div>
+	    <div class="chim-2-pum"></div>
+	    <div class="chim-2-lot"></div>
+	    <div class="chim-3-cutum"></div>
+	    <div class="chim-3-pum"></div>
+	    <div class="chim-3-lot"></div>
+	    <div class="chim-4-cutum"></div>
+	    <div class="chim-4-pum"></div>
+	    <div class="chim-4-lot"></div>
+	    <div class="chim-5-cutum"></div>
+	    <div class="chim-5-pum"></div>
+	    <div class="chim-5-lot"></div>
+	    <div class="chim-tem-cutum"></div>
+	    <div class="chim-tem-pum"></div>
+	    <div class="chim-tem-lot"></div>
+	    <div class="div">설 비 명</div>
+	    <div class="_1">침탄 1호기</div>
+	    <div class="_2">침탄 2호기</div>
+	    <div class="_3">침탄 3호기</div>
+	    <div class="_4">침탄 4호기</div>
+	    <div class="_5">침탄 5호기</div>
+	    <div class="div2">템 퍼 링</div>
+	    <div class="div3">고 객 사</div>
+	    <div class="div4">품 명</div>
+	    <div class="lot-no">LOT NO</div>
+	    <div class="div5">공정 현황</div>
+	    <div class="div6">승온</div>
+	    <div class="div7">강온</div>
+	    <div class="div8">냉각</div>
+	    <div class="div9">공로</div>
+	    <div class="div10">본처리</div>
 		<div class="container">
-			<div id="tab1" class="tabulator"></div>
+			<!-- <div id="tab1" class="tabulator"></div> -->
+		
 		</div>
 	</main>
 	    

@@ -3,44 +3,42 @@ package com.tkheat.domain;
 public class Product {
 	
 	//PRODUCT 테이블
-	private int prod_code;
-	private int corp_code;
-	private String prod_name;
-	private String prod_no;
-	private String prod_gyu;
-	private String prod_jai;
-	private String prod_danj;
-	private String prod_danw;
-	private String prod_dang;
-	private String prod_cno;
-	private String prod_gubn;
-	private String tech_no;
-	private String prod_pg;
-	private String prod_pg1;
-	private String prod_pg2;
-	private String prod_sg;
-	private String prod_sg1;
-	private String prod_sg2;
-	private String prod_gd1;
-	private String prod_gd2;
-	private String prod_gd3;
-	private String prod_gd4;
-	private String prod_gd5;
+	private int prod_code = 0;
+	private int corp_code = 0;
+	private String corp_name;           //거래처명
+	private String prod_name;			//품명
+	private String prod_no;				//품번
+	private String prod_gyu;			//규격
+	private String prod_jai;			//재질
+	private String prod_danj;			//단중
+	private String prod_danw;			//단위
+	private String prod_dang;			//단가
+	private String prod_cno;			//주문번호
+	private String prod_gubn;			//구분[양산/개발]
+	private String prod_pg;				//표면경도[HRC/HV/HS/HRA/HRB/HB/HR15N/HR30N/HR45N]
+	private String prod_pg1;			//표면경도수치 시작값
+	private String prod_pg2;			//표면경도수치 종료값
+	private String prod_sg;				//심부경도[HRC/HV/HRA/HRB/HB]
+	private String prod_sg1;			//심부경도수치 시작값
+	private String prod_sg2;			//심부경도수치 종료값
+	private String prod_gd1;			//경화깊이[유효경화/전경화]
+	private String prod_gd2;			//경화깊이 수치
+	private String prod_gd3;			//경화깊이[HV/HRC]
+	private String prod_gd4;			//경화깊이 수치 시작값
+	private String prod_gd5;			//경화깊이 수치 종료값
 	private String prod_e1;
 	private String prod_e2;
-	private String prod_note;
+	private String prod_note;			//비고
 	private String prod_date;
 	private String prod_model;
-	private String prod_danch;
+	private String prod_danch;			//포장방법
 	private String prod_plt;
-	private String prod_box;
-	private String prod_snp;
-	private String prod_bangch;
-	private String prod_vnyl;
-	private String prod_pad;
-	private String prod_realjai;
-	private String tech_pattern;
-	private String tech_seq;
+	private String prod_box;			//BOX TYPE[A/B]
+	private String prod_snp;			//열처리 곡선[불요/필요]
+	private String prod_bangch;			//방청유[필요없음/수용성/유용성/기타]
+	private String prod_vnyl;			//후처리[불요/쇼트SHOT-(H,T,A,H)/샌딩SAND-(A,index,T,conveyer)]
+	private String prod_pad;			//시편제목[본품/대체시편/시편절단/시편필요없음]
+	private String prod_realjai;		//제품 실재고현황
 	private String prod_cd;
 	private String prod_kijong;
 	private String prod_e3;
@@ -51,7 +49,7 @@ public class Product {
 	private String prod_e5;
 	private String prod_do;
 	private String prod_ra;
-	private String prod_upjong;
+	private String prod_upjong;			//업종[자동차/선박/유압/방산/기타]
 	private String prod_appear;
 	private String prod_transform;
 	private String prod_refno;
@@ -66,26 +64,38 @@ public class Product {
 	private String prod_fac6;
 	private String prod_fac7;
 	private String prod_fac8;
-	private String prod_gj;
-	private String prod_bh;
-	private String prod_chisu1n;
-	private String prod_chisu2n;
-	private String prod_chisu3n;
-	private String prod_chisu4n;
-	private String prod_chisu5n;
-	private String prod_chisu1s;
-	private String prod_chisu2s;
-	private String prod_chisu3s;
-	private String prod_chisu4s;
-	private String prod_chisu5s;
-	private String prod_polish;
-	private String prod_si;
-	private String prod_si1;
-	private String prod_si2;
-	private String prod_sr;
-	private String prod_sr1;
-	private String prod_sr2;
-	private String prod_boxsu;
+	private String prod_gj;					//금속조직
+	private String prod_bh;					//변형량
+	private String prod_chisu1n;			//치수1 비교시작값
+	private String prod_chisu2n;			//치수2 비교시작값
+	private String prod_chisu3n;			//치수3 비교시작값		
+	private String prod_chisu4n;			//치수4 비교시작값
+	private String prod_chisu5n;			//치수5 비교시작값
+	private String prod_chisu1s;			//치수1 비교종료값
+	private String prod_chisu2s;			//치수2 비교종료값
+	private String prod_chisu3s;			//치수3 비교종료값
+	private String prod_chisu4s;			//치수4 비교종료값
+	private String prod_chisu5s;			//치수5 비교종료값
+	private String prod_polish;				//연마여유
+	private String prod_si;					//소입경도[HRC/HV/HS/HRA/HRB/HB/HR15N/HR30N/HR45N]
+	private String prod_si1;				//소입경도수치 시작값
+	private String prod_si2;				//소입경도수치 종료값
+	private String prod_sr;					//소려경도[HRC/HV/HS/HRA/HRB/HB/HR15N/HR30N/HR45N]
+	private String prod_sr1;				//소려경도수치 시작값
+	private String prod_sr2;				//소려경도수치 종료값
+	private String prod_boxsu;				//박스당 수량
+
+	//TECH 테이블
+	private String tech_no;					//공정
+	private String tech_pattern;			//공정패턴
+	private String tech_seq;				//공정순서
+
+	//PRODUCT_IMG 테이블
+//	private int prod_code;					//제품코드 기준으로 저장
+	private String prod_img;				//제품사진
+	private String prod_img2;				//외형사진 및 분석위치
+	private String prod_img3;				//열처리공정
+	
 	public int getProd_code() {
 		return prod_code;
 	}
@@ -584,4 +594,29 @@ public class Product {
 	public void setProd_boxsu(String prod_boxsu) {
 		this.prod_boxsu = prod_boxsu;
 	}
+	public String getProd_img() {
+		return prod_img;
+	}
+	public void setProd_img(String prod_img) {
+		this.prod_img = prod_img;
+	}
+	public String getProd_img2() {
+		return prod_img2;
+	}
+	public void setProd_img2(String prod_img2) {
+		this.prod_img2 = prod_img2;
+	}
+	public String getProd_img3() {
+		return prod_img3;
+	}
+	public void setProd_img3(String prod_img3) {
+		this.prod_img3 = prod_img3;
+	}
+	public String getCorp_name() {
+		return corp_name;
+	}
+	public void setCorp_name(String corp_name) {
+		this.corp_name = corp_name;
+	}
+	
 }

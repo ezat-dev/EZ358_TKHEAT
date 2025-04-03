@@ -191,11 +191,11 @@
 
 	<!-- 유저메뉴 (추가되어 있지 않다면 INSERT) -->
 	<insert id="userLoginMenuSave" parameterType="userMenu">
-		INSERT INTO tb_usermenu (menu_code,user_code, menu_url, menu_name, insert_date, menu_yn)
+		INSERT INTO tb_usermenu (menu_code,user_code, menu_url, menu_name, insert_date,update_date, menu_yn)
 		VALUES
 		((SELECT ISNULL(MAX(menu_code), 0)+1
 					FROM tb_usermenu
-				  ), #{user_code}, #{menu_url}, #{menu_name}, CONVERT(vaRchar(20), GETDATE(),120), 'Y')
+				  ), #{user_code}, #{menu_url}, #{menu_name}, CONVERT(vaRchar(20), GETDATE(),120), CONVERT(vaRchar(20), GETDATE(),120), 'Y')
 	</insert>
 	
 	<update id="userLoginMenuUpdate" parameterType="userMenu">
@@ -211,7 +211,7 @@
 		WHERE 1=1
 		AND user_code = #{user_code}
 		AND menu_yn = 'Y'
-		ORDER BY insert_date DESC
+		ORDER BY update_date DESC
 	</select>	
 	
 	
@@ -226,9 +226,8 @@
 		INSERT INTO LOGINHIS VALUES (
 			(SELECT ISNULL(MAX(LOGIN_CODE), 0)+1
 					FROM LOGINHIS
-				  ),#{user_code}, #{user_ip}
-		)
-		
+				  ),#{user_code}, #{user_ip}, 
+				  CONVERT(vaRchar(20), GETDATE(),120))		
 	</insert>
 
 </mapper>

@@ -3,30 +3,30 @@ package com.tkheat.domain;
 public class Corp {
 
 	//CORP테이블(거래처등록)
-	private int corp_code;
-	private String corp_name;
-	private String corp_name2;
-	private String corp_no;
-	private String corp_tel;
-	private String corp_fax;
-	private String corp_boss;
-	private String corp_mast;
-	private String corp_upte;
-	private String corp_upjo;
-	private String corp_add;
-	private String corp_plc;
-	private String corp_bigo;
-	private String corp_jan;
-	private String corp_strt;
+	private int corp_code;			//거래처코드
+	private String corp_name;		//거래처명
+	private String corp_name2;		
+	private String corp_no;			//사업자등록번호
+	private String corp_tel;		//전화번호
+	private String corp_fax;		//FAX번호
+	private String corp_boss;		//대표
+	private String corp_mast;		//담당자
+	private String corp_upte;		//업태
+	private String corp_upjo;		//업종
+	private String corp_add;		//주소
+	private String corp_plc;		//지역
+	private String corp_bigo;		//비고
+	private String corp_jan;		//기초잔액
+	private String corp_strt;		//거래개시일
 	private String corp_gyul1;
-	private String corp_gyul2;
-	private String corp_gubn;
+	private String corp_gyul2;		//마감일
+	private String corp_gubn;		//구분[매입처/매출처]
 	private String corp_bman;
-	private String corp_hp;
-	private String corp_cno;
-	private String corp_pwd;
-	private String corp_mail;
-	private String corp_business;
+	private String corp_hp;			//담당자 휴대폰
+	private String corp_cno;		//입금통장
+	private String corp_pwd;		//비밀번호
+	private String corp_mail;		//메일주소
+	private String corp_business;	//영업담당자
 	
 	public int getCorp_code() {
 		return corp_code;

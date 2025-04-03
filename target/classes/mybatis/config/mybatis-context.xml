@@ -10,5 +10,12 @@
   	<mapper resource="mybatis/mapper/users.xml"/>
   	<mapper resource="mybatis/mapper/corp.xml"/>
   	<mapper resource="mybatis/mapper/fac.xml"/>
+  	<mapper resource="mybatis/mapper/product.xml"/>
+  	<mapper resource="mybatis/mapper/measure.xml"/>
+  	<mapper resource="mybatis/mapper/standard.xml"/>
+  	<mapper resource="mybatis/mapper/ipgo.xml"/>
+  	<mapper resource="mybatis/mapper/chulgo.xml"/>
+  	<mapper resource="mybatis/mapper/jaego.xml"/>
+  	<mapper resource="mybatis/mapper/gongjung.xml"/>
   </mappers>
 </configuration>

@@ -2,36 +2,39 @@ package com.tkheat.domain;
 
 public class Fac {
 
-	//facP테이블(거래처등록)
-	private int fac_code;
-	private String fac_no;
-	private String fac_name;
-	private String fac_gyu;
-	private String fac_hyun;
-	private String fac_yong;
-	private String fac_man1;
-	private String fac_man2;
-	private String fac_plc;
-	private String fac_make;
-	private String fac_cbuy;
-	private String fac_buy;
-	private String fac_mday;
-	private String fac_mon;
-	private String fac_able;
-	private String fac_time;
-	private String fac_bigo;
+	//facility테이블(설비등록)
+	private int fac_code;		
+	private String fac_no;			//설비번호
+	private String fac_name;		//설비명
+	private String fac_gyu;			//설비규격[가스질화/이온질화/침탄/VC/PQ/TEMPERING/진공/세척기/후처리/기타]
+	private String fac_hyun;		//설비형식
+	private String fac_yong;		//설비용도
+	private String fac_man1;		//관리자(정)
+	private String fac_man2;		//관리자(부)
+	private String fac_plc;			//설치장소
+	private String fac_make;		//제조회사
+	private String fac_cbuy;		//구입처
+	private String fac_buy;			//도입시기
+	private String fac_mday;		//제조일자
+	private String fac_mon;			//구입가격
+	private String fac_able;		//처리용량
+	private String fac_time;		//기동시간 기준
+	private String fac_test;		//점검주기
+	private String fac_bigo;		//비고
 	private String fac_tech_no;
 	private String fac_gubn;
-	private String fac_e1;
-	private String fac_e2;
-	private String fac_e3;
-	private String fac_e4;
-	private String fac_lot;
-	private String fac_dan;
-	private String fac_unus;
-	private String fac_cau;
+	private String fac_e1;			//제조번호
+	private String fac_e2;			//제조사 국적
+	private String fac_e3;			//유지보수업체
+	private String fac_e4;			//주변설비 및 관련사항
+	private String fac_lot;			//사용부서
+	private String fac_dan;			//실적현황 출력
+	private String fac_unus;		//특이사항
+	private String fac_cau;			//설비점검 주의사항
 	private String fac_pda_use;
 	private String fac_state;
+	
+	private String techNo;			//설비종료
 	
 	public int getFac_code() {
 		return fac_code;
@@ -207,10 +210,17 @@ public class Fac {
 	public void setFac_state(String fac_state) {
 		this.fac_state = fac_state;
 	}
-	
-	
-	
-	
-	
+	public String getFac_test() {
+		return fac_test;
+	}
+	public void setFac_test(String fac_test) {
+		this.fac_test = fac_test;
+	}
+	public String getTechNo() {
+		return techNo;
+	}
+	public void setTechNo(String techNo) {
+		this.techNo = techNo;
+	}
 	
 }

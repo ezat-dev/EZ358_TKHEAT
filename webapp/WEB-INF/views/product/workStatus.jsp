@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>거래처등록</title>
+    <title>공정작업현황</title>
     <link rel="stylesheet" href="/tkheat/css/management/productInsert.css">
     <link rel="stylesheet" href="/tkheat/css/tabBar/tabBar.css">
 <%@include file="../include/pluginpage.jsp" %> 
@@ -76,12 +76,12 @@
 	//로드
 	$(function(){
 		//전체 거래처목록 조회
-		getCutumList();
+		getWorkStatusList();
 	});
 
 	//이벤트
 	//함수
-	function getCutumList(){
+	function getWorkStatusList(){
 		
 		userTable = new Tabulator("#tab1", {
 		    height:"750px",
@@ -91,12 +91,12 @@
 		    selectableRangeMode:"click",
 		    reactiveData:true,
 		    headerHozAlign:"center",
-		    /*		    ajaxConfig:"POST",
+		    ajaxConfig:"POST",
 		    ajaxLoader:false,
-		    ajaxURL:"/tkheat/management/authority/productList",
+		    ajaxURL:"/tkheat/product/workStatus/getWorkStatusList",
 		    ajaxProgressiveLoad:"scroll",
 		    ajaxParams:{},
-*/		    placeholder:"조회된 데이터가 없습니다.",
+		    placeholder:"조회된 데이터가 없습니다.",
 		    paginationSize:20,
 		    ajaxResponse:function(url, params, response){
 				$("#tab1 .tabulator-col.tabulator-sortable").css("height","29px");
@@ -105,11 +105,11 @@
 		    columns:[
 		        {title:"NO", field:"idx", sorter:"int", width:80,
 		        	hozAlign:"center"},
-		        {title:"코드", field:"prod_code", sorter:"string", width:120,
+		        {title:"담당자", field:"ord_name", sorter:"string", width:120,
 			        hozAlign:"center"},	
-			    {title:"등록일", field:"prod_date", sorter:"string", width:120,
+			    {title:"수주NO", field:"ord_code", sorter:"string", width:120,
 				    hozAlign:"center"},     
-				{title:"거래처명", field:"corp_name", sorter:"string", width:120,
+				{title:"거래처", field:"corp_name", sorter:"string", width:120,
 				    hozAlign:"center"}, 
 				{title:"품명", field:"prod_name", sorter:"string", width:150,
 				    hozAlign:"center"}, 
@@ -119,21 +119,23 @@
 		        	hozAlign:"center"},
 		        {title:"재질", field:"prod_jai", sorter:"string", width:100,
 		        	hozAlign:"center"},
-		        {title:"공정", field:"tech_te", sorter:"string", width:100,
+		        {title:"입고", field:"ord_su", sorter:"string", width:100,
 			        hozAlign:"center"},	
-		        {title:"단중", field:"prod_danj", sorter:"int", width:100,
+		        {title:"준비", field:"prod_j", sorter:"int", width:100,
 		        	hozAlign:"center"},  	
-		        {title:"단위", field:"prod_danw", sorter:"int", width:100,
+		        {title:"전세정", field:"prod_p", sorter:"int", width:100,
 			        hozAlign:"center"},	
-			    {title:"단가(EA)", field:"prod_danw", sorter:"int", width:100,
+			    {title:"침탄", field:"prod_a", sorter:"int", width:100,
 				    hozAlign:"center"},	
-				{title:"단가(kG)", field:"prod_danw", sorter:"int", width:100,
+				{title:"고주파", field:"prod_h", sorter:"int", width:100,
 				    hozAlign:"center"},
-				{title:"표면경도", field:"prod_danw", sorter:"int", width:100,
+				{title:"후세정", field:"prod_f", sorter:"int", width:100,
 					hozAlign:"center"},
-			    {title:"경화깊이", field:"prod_danw", sorter:"int", width:100,
+			    {title:"템퍼링", field:"prod_r", sorter:"int", width:100,
 					hozAlign:"center"},
- 			    {title:"심부경도", field:"prod_danw", sorter:"int", width:100,
+ 			    {title:"쇼트", field:"prod_s", sorter:"int", width:100,
+					hozAlign:"center"},
+				{title:"출고", field:"och_su", sorter:"int", width:100,
 					hozAlign:"center"},
 				    
 		    ],

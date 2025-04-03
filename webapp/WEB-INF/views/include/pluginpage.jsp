@@ -26,6 +26,7 @@
 <script type="text/javascript" src="/tkheat/js/airdatepicker/datepicker.min.js"></script>
 <script type="text/javascript" src="/tkheat/js/airdatepicker/datepicker.ko.js"></script>
 <link rel="stylesheet" href="/tkheat/css/airdatepicker/datepicker.min.css"> 
+
 <style>
 	
 </style>
@@ -186,9 +187,9 @@ function pageObject(paramKey){
 			"h07":"",//기존 : 설비비가동코드등록
 			"h08":["/tkheat/management/authority","사원별권한등록"],
 			"h09":"",//기존 : 로그인기록
-			"h10":["/tkheat/management/coilInsert","코일등록"],
-			"h11":["/tkheat/management/plugInsert","PLUG등록"],
-			"h12":["/tkheat/management/plugInspection","PLUG점검기준등록"],
+			"h10":"",//코일등록
+			"h11":"",//plug등록
+			"h12":"",//plug점검기준등록
 			"h13":["/tkheat/management/measurement","측정기기관리"]
 	};
 

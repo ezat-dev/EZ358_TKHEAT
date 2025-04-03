@@ -8,7 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/tkheat/css/login/style.css">
 
-	<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+	
   <link rel="stylesheet" href="/tkheat/css/sideBar/styles.css">
 <%@include file="../include/pluginpage.jsp" %>  
   <title>태경열처리</title>

@@ -146,7 +146,10 @@
 		    ajaxLoader:false,
 		    ajaxURL:"/tkheat/management/authority/userList",
 		    ajaxProgressiveLoad:"scroll",
-		    ajaxParams:{},
+		    ajaxParams:{
+			    "sdate":$("#").val(),
+			    
+			   },
 		    placeholder:"조회된 데이터가 없습니다.",
 		    paginationSize:20,
 		    ajaxResponse:function(url, params, response){
